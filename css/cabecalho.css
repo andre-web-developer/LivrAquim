@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#logo{
+    width: 100%;
+    height: 175px;
+    background-color: #52AADB;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 15px;
+}
+#logo img{
+    width: 155px;
+    height: 125px;
+}
+.title{
+    font-weight: bold;
+    color: #fff;
+    font-size: 4em;
+}
+#menu{
+    height: 80px;
+    border: solid 2px rgb(0, 64, 182);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#menu li{
+    width: 30%;
+    background-color: white;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    color: black;
+}

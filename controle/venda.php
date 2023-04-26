@@ -21,7 +21,11 @@
         echo "Titulo = $linha[titulo]<br>";
         echo "Quantidade = <select name='$linha[quantidade]'>";
           for ($i=0; $i <= $linha['quantidade']; $i++) { 
-            echo"<option value $i>$i</option>";
+            if ($i==0) {
+              echo "<option value $i>-</option>";
+            }else{
+              echo"<option value $i>$i</option>";
+            }
           }
           echo "</select> <br>";
         echo "Preço unitario = $linha[precovenda]<br>";

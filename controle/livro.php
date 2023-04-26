@@ -46,7 +46,7 @@
         $precocompra = floatval($precocompra);
         $precovenda = floatval($precovenda);
 
-        $pasta = 'capas/';
+        $pasta = 'img/';
         $caminhocompleto = $pasta.basename($nomeaequivo);
         move_uploaded_file($foto['tmp_name'], $caminhocompleto);
 

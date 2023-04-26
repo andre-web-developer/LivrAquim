@@ -6,9 +6,9 @@
     $banco = new Banco();
     $sql = "INSERT INTO tema(tema) VALUES ('$tema')";
     if($banco->executar($sql)){
-        header("Location:../view/sucesso_cadastro.php");
+      header("Location:../view/sucesso_cadastro.php");
     }else{
-        header("Location:../view/falha_cadastro.php");
+      header("Location:../view/falha_cadastro.php");
     }
   }
 ?>

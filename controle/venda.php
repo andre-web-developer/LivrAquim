@@ -19,15 +19,18 @@
         echo "<br><img src='../$linha[foto]'><br>";
         echo "ISBN = $linha[isbn]<br>";
         echo "Titulo = $linha[titulo]<br>";
-        echo "Quantidade = <select name='$linha[quantidade]'>";
+        echo "Quantidade = <select name='$linha[quantidade]' id='quantidade$linha[id_livro]' onChange='update($linha[id_livro])'>";
           for ($i=0; $i <= $linha['quantidade']; $i++) { 
             if ($i==0) {
-              echo "<option value $i>-</option>";
+              echo "<option value=$i>-</option>";
             }else{
-              echo"<option value $i>$i</option>";
+              echo"<option value=$i>$i</option>";
             }
-          }
-          echo "</select> <br>";
-        echo "Preço unitario = $linha[precovenda]<br>";
+          }echo "</select> <br>";
+
+        echo "Preço unitario = <input type='text' disabled='' id='precovenda$linha[id_livro]' value='$linha[precovenda]'><br>";
+        echo "<span id='mostratotalitem$linha[id_livro]' style='display:none;'>
+                Subtotal:<input type='text' disabled='' id='precototalitem$linha[id_livro]' value=''>
+              </span>";
       } 
   }

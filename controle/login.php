@@ -18,12 +18,11 @@
             $usuario->logar();
         }
         else{
-            header("Location:../view/falha_login.php");
+            echo "deu ruim";
             return false;
         }
 
     }
-    
     if(isset($_GET['sair'])){
         session_start();
         session_unset();
@@ -35,4 +34,9 @@
         if(!isset($_SESSION['nome']))
            header("Location:../index2.php");
     }
+   
+ 
+   
+
+
 ?>

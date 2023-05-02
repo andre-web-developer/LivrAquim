@@ -1,42 +1,148 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700;900&display=swap');
+
+*{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
 }
-#logo{
-    width: 100%;
-    height: 175px;
-    background-color: #52AADB;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border-radius: 15px;
+
+li, a, button{
+   font-family: 'Poppins', sans-serif;
+   font-weight: 700;
+   font-size: 20px;
+   color: #edf0f1;
+   text-decoration: none;
 }
-#logo img{
-    width: 155px;
-    height: 125px;
+
+header{
+   position: fixed;
+   top: 0; left: 0; right: 0;
+   z-index: 1000;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #52AADB;
+   box-shadow: 0 5px 10px rgba(0,0,0,.1);
 }
-.title{
-    font-weight: bold;
-    color: #fff;
-    font-size: 4em;
+
+.logo{
+   cursor: pointer;
+   width: 300px;
+   padding: 10px 0px 10px 10px;
 }
-#menu{
-    height: 80px;
-    border: solid 2px rgb(0, 64, 182);
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+
+/*##### ESTILO DO MENU #####*/
+.nav-links ul{
+   list-style: none;
 }
-#menu li{
-    width: 30%;
-    background-color: white;
-    text-align: center;
-    font-size: 2em;
-    font-weight: bold;
+
+.nav-links ul li{
+   display: inline-block;
+   padding: 0 20px;
+   position: relative;
+   float: left;
 }
-a{
-    text-decoration: none;
-    color: black;
+
+.nav-links ul li a {
+   transition: 1s;
+   display: block;
+}
+
+.nav-links ul li a:hover{
+   text-decoration: overline;
+}
+/*##### ESTILO DO DROPDOWN DO MENU #####*/
+.nav-links ul li ul{
+   position: absolute;
+   left: 0;
+   width: 200px;
+   background-color: #52AADB;
+   display: none;
+}
+
+.nav-links ul li ul li{
+   width: 100%;
+   border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.nav-links ul li:hover > ul,.nav-links ul li:focus-within > ul{
+   display: initial;
+}
+
+
+/*##### ESTILO DO BOTÃO DE SAIR #####*/
+.sair-link{
+   padding: 10px 10px 10px 0;
+}
+
+.sair {
+   border-radius: 15px;
+   text-transform: uppercase;
+   color: #52AADB;
+   font-size: 15px;
+   padding: 5px 0;
+   cursor: pointer;
+   font-weight: bold;
+   width: 130px;
+   background-color: #fff;
+   border: 1px solid transparent;
+   transition: 1s;
+   font-family: 'Poppins', sans-serif;
+}
+
+.sair:hover {
+   background-color: #52AADB;
+   color: #fff;
+   border: 1px solid #fff;
+}
+
+/*##### TRABALHANDO A RESPONSIVIDADE #####*/
+#menu-bar{
+   display: none;
+}
+
+header label{
+   cursor: pointer;
+   display: none;
+}
+
+@media(max-width:991px){
+   header{
+      padding: 20px;
+   }
+
+   header label{
+      display: initial;
+   }
+
+   .nav-links{
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      background-color: #52AADB;
+      border-top: 1px solid rgba(0,0,0,.1);
+      display: none;
+   }
+
+   .nav-links ul li{
+      width: 100%;
+
+   }
+
+   .nav-links ul li ul{
+      position: relative;
+      width: 100%;
+   }
+
+   .nav-links ul li ul li{
+      background-color: #52AADB;
+   }
+
+   #menu-bar{
+      color: #edf0f1;
+      size: 2em;
+   }
+
+   #menu-bar:checked ~ .nav-links{
+      display: initial;
+   }
 }

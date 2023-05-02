@@ -1,14 +1,22 @@
 <?php
-  include_once ("../banco/Banco.php");
-  if (isset($_POST['autor'])) {
-    $autor = $_POST['autor'];
+require_once ("../banco/Banco.php");
 
-    $banco = new Banco();
-    $sql = "INSERT INTO autor(nome) VALUES ('$autor')";
-    if($banco->executar($sql)){
-        header("Location:../view/sucesso_cadastro.php");
-    }else{
-        header("Location:../view/falha_cadastro.php");
-    }
-  }
+if(isset($_POST['nome'])){
+    $nome = $_POST['nome'];
+}
+
+$banco = new Banco();
+
+$sql = "INSERT INTO autor(autor) VALUES('$nome')";
+
+if($banco->executar($sql)){
+    header("Location:../view/sucessocadastro.php");
+
+}
+else{
+    header("Location:../view/falhacadastro.php");
+}
+
+
+
 ?>

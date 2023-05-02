@@ -21,8 +21,8 @@ body {
 .content {
     background-color: #fff;
     border-radius: 15px;
-    width: 80%;
-    height: 80%;
+    width: 70%;
+    height: 70%;
     justify-content: space-between;
     align-items: center;
     position: relative;
@@ -90,7 +90,7 @@ body {
     width: 55%;
 }
 
-.form input {
+.cadastro {
     height: 45px;
     width: 100%;
     border: none;

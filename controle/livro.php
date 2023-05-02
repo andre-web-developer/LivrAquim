@@ -7,7 +7,7 @@
         $sql = "select*from autor";
         $resultado = $banco->consultar($sql);
         while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
-            echo "<option value=$linha[id_autor]>$linha[nome]</option>";
+            echo "<option value=$linha[id_autor]>$linha[autor]</option>";
         }             
     }
 
@@ -53,9 +53,10 @@
         $banco = new Banco();
         $sql = "INSERT INTO livro(isbn,titulo,ano,id_autor,id_tema,id_editora,precocompra,precovenda,quantidade,foto) VALUES ('$isbn','$titulo','$ano','$id_autor','$id_tema','$id_editora','$precocompra','$precovenda','$quantidade','$caminhocompleto')";
         if($banco->executar($sql)){
-            header("Location:../view/sucesso_cadastro.php");
+            header ("Location:../view/sucessocadastro.php");
+        
         }else{
-            header("Location:../view/falha_cadastro.php");
+            header("Location:../view/falhacadastro.php");
         }
     }
 

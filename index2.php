@@ -1,6 +1,6 @@
 <?php
-     session_start();
-     if(isset($_SESSION['nome']))
+    session_start();
+    if(isset($_SESSION['nome']))
         header("Location:view/bem_vindo.php");
 ?>
 <!DOCTYPE html>

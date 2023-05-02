@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../css/cabecalho.css">
+hea<link rel="stylesheet" href="../css/cabecalho.css">
 <header>
    <a href="bem_vindo.php"><img class="logo" src="../img/logo-cabecalho.png" alt="livraquim logo"></a>
    <input type="checkbox" id="menu-bar">

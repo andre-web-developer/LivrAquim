@@ -48,7 +48,8 @@
 
         $pasta = 'img/';
         $caminhocompleto = $pasta.basename($nomeaequivo);
-        move_uploaded_file($foto['tmp_name'], $caminhocompleto);
+        $caminhoUpload = "..$pasta.basename($nomeaequivo)";
+        move_uploaded_file($foto['tmp_name'], $caminhoUpload);
 
         $banco = new Banco();
         $sql = "INSERT INTO livro(isbn,titulo,ano,id_autor,id_tema,id_editora,precocompra,precovenda,quantidade,foto) VALUES ('$isbn','$titulo','$ano','$id_autor','$id_tema','$id_editora','$precocompra','$precovenda','$quantidade','$caminhocompleto')";

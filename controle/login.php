@@ -32,11 +32,6 @@
     function testa_login(){
         session_start();
         if(!isset($_SESSION['nome']))
-           header("Location:../index2.php");
+            header("Location:../index2.php");
     }
-   
- 
-   
-
-
 ?>

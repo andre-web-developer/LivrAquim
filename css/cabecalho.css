@@ -40,7 +40,7 @@ header{
 }
 
 .nav-links ul li a {
-   transition: 1s;
+   transition: .5s;
    display: block;
 }
 

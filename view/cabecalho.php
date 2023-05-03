@@ -13,6 +13,14 @@
                <li><a href="form_tema.php">Tema</a></li>
             </ul>
          </li>
+         <li><a href="#">Listar +</a>
+            <ul>
+               <li><a href="lista_livro.php">Livros</a></li>
+               <li><a href="lista_editora.php">Editora</a></li>
+               <li><a href="lista_autor.php">Autor</a></li>
+               <li><a href="lista_tema.php">Tema</a></li>
+            </ul>
+         </li>
          <li><a href="form_venda.php">Vendas</a></li>
          <li><a href="#">Relatórios +</a>
             <ul>

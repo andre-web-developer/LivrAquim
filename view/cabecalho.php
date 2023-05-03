@@ -24,5 +24,7 @@
          </li>
       </ul>
    </nav>
+
+
    <a href="../controle/login.php?sair=true" class="sair-link"><button class="sair">Sair</button></a>
 </header>

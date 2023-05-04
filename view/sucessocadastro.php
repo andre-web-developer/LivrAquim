@@ -1,7 +1,8 @@
 <?php
     require_once("../controle/login.php");
     testa_login();
-    require("cabecalho.php")
+    require("cabecalho.php");
+    $pagina = $_GET['pagina'];
 
 ?>
 <!DOCTYPE html>
@@ -15,9 +16,7 @@
 <body>
     <div id="principal">
         <h3>Cadastro efetuado com sucesso!</h3>
-        <a href="form_livro.php"> Cadastrar Livro </a><br>
-        <a href="#"> Cadastrar Tema </a><br>
-        <a href="#"> Cadastrar Autor </a><br>
-        <a href="#"> Cadastrar Editora </a><br>
+        <a href="form_<?php echo $pagina.".php"; ?>"> ISSO É UM TESTEZAO PRA VENDA</a>
+        
 </body>
 </html>

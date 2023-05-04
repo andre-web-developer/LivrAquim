@@ -93,7 +93,7 @@ if (isset($_POST['pagamento'])) {
         $banco->executar($sql);
     }
     
-    header("Location:../view/sucessicadastro.php");
+    header("Location:../view/sucessocadastro.php?pagina=venda");
 }
     
 ?>

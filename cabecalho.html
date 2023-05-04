@@ -1,0 +1,69 @@
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<link rel="stylesheet" href="./cabecalho.css" />
+
+   <header id="header">
+      <a id="logo" href="bem_vindo.php"><img class="logo" src="./img/logo-cabecalho.png" alt="livraquim logo"></a>
+      <nav id="nav">
+      <button
+         aria-label="Abrir Menu"
+         id="btn-mobile"
+         aria-haspopup="true"
+         aria-controls="menu"
+         aria-expanded="false"
+      >
+         
+         <span id="hamburger"></span>
+      </button>
+      <ul id="menu" role="menu" class="ul-principal">
+         <li><a class="links" href="form_venda.php">Vendas</a></li>
+         
+         <li><a class="links" href="#">Cadastrar</a>
+            <ul class="submenu">
+               <li><a href="form_livro.php">Livros</a></li>
+               <li><a href="form_editora.php">Editora</a></li>
+               <li><a href="form_autor.php">Autor</a></li>
+               <li><a href="form_tema.php">Tema</a></li>
+            </ul>
+         </li>
+         
+         <li><a class="links" href="#">Listar</a>
+            <ul class="submenu">
+               <li><a href="lista_livro.php">Livros</a></li>
+               <li><a href="lista_editora.php">Editora</a></li>
+               <li><a href="lista_autor.php">Autor</a></li>
+               <li><a href="lista_tema.php">Tema</a></li>
+            </ul>
+         </li>
+         
+         <li><a class="links" href="#">Relatórios</a>
+            <ul class="submenu">
+               <li><a href="#">Diário</a></li>
+               <li><a href="#">Semanal</a></li>
+               <li><a href="#">Mensal</a></li>
+               <li><a href="#">Anual</a></li>
+            </ul>
+         </li>
+         <a class='sair-link' href="../controle/login.php?sair=true"><button id="sair">Sair</button></a>
+      </ul>
+      </nav>
+   </header>
+   
+   <script>
+      const btnMobile = document.getElementById('btn-mobile');
+
+      function toggleMenu(event) {
+         if (event.type === 'touchstart') event.preventDefault();
+         const nav = document.getElementById('nav');
+         nav.classList.toggle('active');
+         const active = nav.classList.contains('active');
+         event.currentTarget.setAttribute('aria-expanded', active);
+         if (active) {
+            event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+         } else {
+            event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+         }
+      }
+
+      btnMobile.addEventListener('click', toggleMenu);
+      btnMobile.addEventListener('touchstart', toggleMenu);
+   </script>

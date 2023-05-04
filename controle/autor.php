@@ -7,7 +7,7 @@ if(isset($_POST['nome'])){
 
 $banco = new Banco();
 
-$sql = "INSERT INTO autor(autor) VALUES('$nome')";
+$sql = "INSERT INTO autor(nome) VALUES('$nome')";
 
 if($banco->executar($sql)){
     header("Location:../view/sucessocadastro.php");

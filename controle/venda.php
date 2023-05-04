@@ -55,7 +55,45 @@ function mostrarCompra(){
         echo "<br><br>";
             
     }
-echo "Preço total da compra: - ".$_SESSION['precoprevio'];
+    echo "Preço total da compra: ".$_SESSION['precoprevio'];
+}
+
+if (isset($_POST['pagamento'])) {
+    $id_formapagamento = $_POST['pagamento'];
+    
+    $dia = date("d")-1;//recebo dia com a date function e diminuo 1, fuso errado
+    $data = date("Y-m-");//recebe ano e mes
+    $data = $data.'-'.$dia;//concatena tudo
+
+    session_start();
+    $valortotal = $_SESSION['precoprevio'];
+
+    //criar instância do banco
+    $banco = new Banco();
+    $sql = "INSERT INTO venda(id_formapagamento,data,valortotal) VALUES ('$id_formapagamento','$data','$valortotal')";
+    $banco->executar($sql);
+    
+    //#################################### Cadastrando na tabela venda_livro ########################################
+    $id_venda = $banco->ultimoId();
+    
+    $livrosComprados = $_SESSION['livroscomprados'];
+    
+    foreach($livrosComprados as $id_livro => $quantidade_venda){
+        $sql = "SELECT precovenda,quantidade from livro WHERE id_livro='$id_livro'";
+        $resultado = $banco->consultar($sql);
+        $valorunitario = $resultado['precovenda'];
+
+        //fazer a SQL para cadastrar valores na tabela venda_livro
+        $sql = "INSERT INTO venda_livro(id_livro,id_venda,quantidade_venda,valorunitario) VALUES ('$id_livro','$id_venda','$quantidade_venda','$valorunitario')";
+        $banco->executar($sql);
+
+        //Calcula estoque
+        $saldoEstoque = $resultado['quantidade']-$quantidade_venda;
+        $sql = "UPDATE livro SET quantidade = '$saldoEstoque' WHERE id_livro='$id_livro'";
+        $banco->executar($sql);
+    }
+    
+    header("Location:../view/sucessicadastro.php");
 }
     
 ?>

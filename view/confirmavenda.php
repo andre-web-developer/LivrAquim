@@ -6,7 +6,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,5 +18,20 @@
         require("../controle/venda.php");
         mostrarCompra();
     ?>
+
+    <form action="../controle/venda.php" method="post">
+        <h2>Metodo de pagamento:</h2><br>
+        <input type="radio" name="pagamento" value="1">
+        <label for="dinheiro">Dinheiro</label>
+        
+        <input type="radio" name="pagamento" value="2">
+        <label for="pix">PIX</label>
+        
+        
+        <input type="radio" name="pagamento" value="3">
+        <label for="cartao">Cartão</label>
+
+        <input type="submit" value="Enviar">
+    </form>
 </body>
 </html>

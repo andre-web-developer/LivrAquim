@@ -7,7 +7,7 @@
         $sql = "select*from autor";
         $resultado = $banco->consultar($sql);
         while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
-            echo "<option value=$linha[id_autor]>$linha[autor]</option>";
+            echo "<option value=$linha[id_autor]>$linha[nome]</option>";
         }             
     }
 
@@ -48,8 +48,7 @@
 
         $pasta = 'img/';
         $caminhocompleto = $pasta.basename($nomeaequivo);
-        $caminhoUpload = "..$pasta.basename($nomeaequivo)";
-        move_uploaded_file($foto['tmp_name'], $caminhoUpload);
+        move_uploaded_file($foto['tmp_name'], "../".$caminhocompleto);
 
         $banco = new Banco();
         $sql = "INSERT INTO livro(isbn,titulo,ano,id_autor,id_tema,id_editora,precocompra,precovenda,quantidade,foto) VALUES ('$isbn','$titulo','$ano','$id_autor','$id_tema','$id_editora','$precocompra','$precovenda','$quantidade','$caminhocompleto')";

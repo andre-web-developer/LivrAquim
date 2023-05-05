@@ -18,10 +18,10 @@
          
          <li><a href="#">Listar +</a>
             <ul>
-               <li><a href="lista_livro.php">Livros</a></li>
-               <li><a href="lista_editora.php">Editora</a></li>
-               <li><a href="lista_autor.php">Autor</a></li>
-               <li><a href="lista_tema.php">Tema</a></li>
+               <li><a href="listar_livro.php">Livros</a></li>
+               <li><a href="listar_editora.php">Editora</a></li>
+               <li><a href="listar_autor.php">Autor</a></li>
+               <li><a href="listar_tema.php">Tema</a></li>
             </ul>
          </li>
          

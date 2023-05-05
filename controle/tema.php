@@ -1,33 +1,35 @@
 <?php
+    require_once ("../banco/Banco.php");
+    require_once ("classes/Tema.php");
 
+    //testar se o usuario enviou algo via POST
 
-require_once ("../banco/Banco.php");
+    if(isset($_POST['tema'])){
 
-//testar se o usuario enviou algo via POST
+    //pegar os valores dos names do formulario POST
+        $tema = $_POST['tema'];
 
-if(isset($_POST['tema'])){
+        //preparar para enviar para o banco de dados
+        //criar uma conexão com o banco
 
- //pegar os valores dos names do formulario POST
-    $tema = $_POST['tema'];
+        $banco = new Banco();
 
-    //preparar para enviar para o banco de dados
-    //criar uma conexão com o banco
+        //criar a sql para inserir
+        $sql = "INSERT INTO tema(tema) VALUES('$tema')";
 
-    $banco = new Banco();
+        //executar a sql e testar se retornou verdadeiro(sucesso) ou falso(falha)
+        if($banco->executar($sql)){
+            header("Location:../view/sucessocadastro.php");
 
-    //criar a sql para inserir
-    $sql = "INSERT INTO tema(tema) VALUES('$tema')";
-
-    //executar a sql e testar se retornou verdadeiro(sucesso) ou falso(falha)
-    if($banco->executar($sql)){
-        header("Location:../view/sucessocadastro.php");
-
+        }
+        else{
+            header("Location:../view/falhacadastro.php");
+        }
     }
-    else{
-        header("Location:../view/falhacadastro.php");
+
+    function listar(){
+        $tema = new Tema();
+        $tema->listarTemas();
     }
-}
-
-
 
 ?>

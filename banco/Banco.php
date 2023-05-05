@@ -37,8 +37,5 @@ class Banco extends PDO{
 	public function ultimoId(){
 		return $this->conex->lastInsertId();
 	}
-
 }
-
-
 ?>

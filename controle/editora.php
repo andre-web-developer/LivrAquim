@@ -1,5 +1,6 @@
 <?php
 require_once  ("../banco/Banco.php");
+require_once  ("classes/Editora.php");
 
 if(isset($_POST['nome'])){
     $nome = $_POST['nome'];
@@ -11,15 +12,18 @@ if(isset($_POST['nome'])){
     $sql = "INSERT INTO editora(nome,cnpj,telefone) VALUES('$nome','$cnpj','$telefone')";
     
     if($banco->executar($sql)){
-        header("Location:../view/sucessocadastro.php");
+        header("Location:../view/sucessocadastro.php?pagina=editora");
     
     }
     else{
         header("Location:../view/falhacadastro.php");
     }
-    
-    
-} 
+}
+
+function listar(){
+    $tema = new Editora();
+    $tema->listarEditora();
+}
     
 
 ?>

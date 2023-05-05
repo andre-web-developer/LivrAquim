@@ -18,11 +18,6 @@ a {
    background: rgba(0, 0, 0, 0.05);
 }
 
-#logo {
-   font-size: 1.5rem;
-   font-weight: bold;
-}
-
 #header {
    box-sizing: border-box;
    height: 100px;
@@ -56,7 +51,7 @@ a {
    width: 130px;
    background-color: #fff;
    border: 1px solid transparent;
-   transition: 1s;
+   transition: .5s;
    font-family: 'Poppins', sans-serif;
 }
 

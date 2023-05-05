@@ -16,7 +16,8 @@
 <body>
     <div id="principal">
         <h3>Cadastro efetuado com sucesso!</h3>
-        <a href="form_<?php echo $pagina.".php"; ?>"> ISSO É UM TESTEZAO PRA VENDA</a>
+        <a href="form_<?php echo $pagina.".php"; ?>">Continue Cadastrando</a>
+        <a href="bem_vindo.php"; ?>">Volte ao inicio</a>
         
 </body>
 </html>

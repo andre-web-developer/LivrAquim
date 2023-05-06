@@ -15,8 +15,8 @@
 </head>
 <body>
     <div id="principal">
-        <h3>Cadastro efetuado com sucesso!</h3>
-        <a href="form_<?php echo $pagina.".php"; ?>">Continue Cadastrando</a>
+        <h3>A exclusão do item falhou por existir dependencias nos dados, por favor considere apenas alteralo:</h3>
+        <a href="form_<?php echo $pagina.".php"; ?>">Tente alterar</a>
         <a href="bem_vindo.php"; ?>Volte ao inicio</a>
     </div>
 </body>

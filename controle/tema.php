@@ -32,4 +32,18 @@
         $tema->listarTemas();
     }
 
+    if(isset($_GET['id_tema'])){
+        $id_tema = $_GET['id_tema'];
+        $tema = new Tema();
+        switch ($_GET['op']) {
+            case 'd':
+                $tema->deletaTema($id_tema);
+            break;
+            
+            case 'a':
+                $tema->alteraTema($id_tema);
+            break;
+        }
+    }
+
 ?>

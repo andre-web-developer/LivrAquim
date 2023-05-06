@@ -20,10 +20,24 @@
                 <td>$linha[nome]</td>
                 <td>$linha[cnpj]</td>
                 <td>$linha[telefone]</td>
-                <td>Alterar</td>
-                <td>Excluir</td>
+                <td><a href='../controle/editora.php?id_editora=$linha[id_editora]&op=a'><button class='btn btn-warning'>Alterar</button></a></td>
+                <td><a href='../controle/editora.php?id_editora=$linha[id_editora]&op=d'><button class='btn btn-danger'>Excluir</button></a></td>
               </tr>";
       }
+    }
+    public function deletaEditora($id_editora){
+      $sql = "DELETE FROM editora WHERE id_editora=$id_editora";
+      $resultado = $this->banco->executar($sql);
+      if ($resultado) {
+        header("Location:../view/listar_editora.php");
+      }
+      else{
+        header("Location:../view/falha_exclusao.php?pagina=editora");
+      }
+    }
+
+    public function alteraEditora($id_editora){
+
     }
   }
 ?>

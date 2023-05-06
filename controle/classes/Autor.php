@@ -16,20 +16,25 @@
         echo "<tr>
                 <th scope='row'>$linha[id_autor]</th>
                 <td>$linha[nome]</td>
-                <td>Alterar</td>
-                <td><a href='../controle/autor.php?id_autor=$linha[id_autor]&op=d'>Deletar</a></td>
+                <td><a href='../controle/autor.php?id_autor=$linha[id_autor]&op=a'><button class='btn btn-warning'>Alterar</button></a></td>
+                <td><a href='../controle/autor.php?id_autor=$linha[id_autor]&op=d'><button class='btn btn-danger'>Excluir</button></a></td>
               </tr>";
       }
     }
 
-    public function deletaAutor(){
-      $sql = "DELETE FROM autor WHERE id_autor=$linha_autor";
-      header("Location:../view/sucessocadastro.php?pagina=autor");
+    public function deletaAutor($id_autor){
+      $sql = "DELETE FROM autor WHERE id_autor=$id_autor";
+      $resultado = $this->banco->executar($sql);
+      if ($resultado) {
+        header("Location:../view/listar_autor.php");
+      }
+      else{
+        header("Location:../view/falha_exclusao.php?pagina=autor");
+      }
     }
 
-    public function auteraAutor(){
-      $sql = "NÃO FAÇO IDEIA";
-      header("Location:../view/sucessocadastro.php?pagina=autor");
+    public function alteraAutor($id_autor){
+
     }
   }
 ?>

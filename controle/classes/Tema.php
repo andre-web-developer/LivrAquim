@@ -19,10 +19,27 @@
         echo "<tr>
                 <th scope='row'>$linha[id_tema]</th>
                 <td>$linha[tema]</td>
-                <td>Alterar</td>
-                <td>Excluir</td>
+                <td><a href='../controle/tema.php?id_tema=$linha[id_tema]&op=a'><button type='button' class='btn btn-warning'>Alterar</button></a></td>
+                <td><a href='../controle/tema.php?id_tema=$linha[id_tema]&op=d'><button type='button' class='btn btn-danger'>Excluir</button></a></td>
               </tr>";
       }
     }
+
+    public function deletaTema($id_tema){
+      $sql = "DELETE FROM tema WHERE id_tema=$id_tema";
+      $resultado = $this->banco->executar($sql);
+      if ($resultado) {
+        header("Location:../view/listar_tema.php");
+
+      }
+      else{
+        header("Location:../view/falha_exclusao.php?pagina=tema");
+      }
+    }
+  
+    public function alteraTema($id_tema){
+
+    }
   }
+
 ?>

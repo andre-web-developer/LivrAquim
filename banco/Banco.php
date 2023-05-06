@@ -10,7 +10,7 @@ class Banco extends PDO{
     }
 
     public function executar($sql){
-		//usada geralmente para inserir dados
+		//usada geralmente para inserir ou deletar dados
 		if($this->conex->query($sql)){
 			return true;
 		}

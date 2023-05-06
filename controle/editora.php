@@ -21,9 +21,19 @@ if(isset($_POST['nome'])){
 }
 
 function listar(){
-    $tema = new Editora();
-    $tema->listarEditora();
+    $editora = new Editora();
+    $editora->listarEditora();
 }
-    
+
+if(isset($_GET['id_editora'])){
+    $id_editora = $_GET['id_editora'];
+    $editora = new Editora();
+    if($_GET['op']=='d'){
+        $editora->deletaEditora($id_editora);
+    }
+    else{
+        $editora->alteraEditora($id_autor);
+    }
+}   
 
 ?>

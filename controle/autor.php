@@ -2,19 +2,6 @@
 require_once ("../banco/Banco.php");
 require_once ("classes/Autor.php"); 
 
-
-
-if(isset($_GET['id_autor'])){
-    $id_autor = $_GET['id_autor'];
-    $autor = new Autor();
-    if($_GET['op']=='d'){
-        $autor->deletaAutor();
-    }
-    else{
-        $autor->alteraAutor();
-    }
-}
-
 if(isset($_POST['nome'])){
     $nome = $_POST['nome'];
     $banco = new Banco();
@@ -36,4 +23,14 @@ function listar(){
     $autor->listarAutor();
 }
 
+if(isset($_GET['id_autor'])){
+    $id_autor = $_GET['id_autor'];
+    $autor = new Autor();
+    if($_GET['op']=='d'){
+        $autor->deletaAutor($id_autor);
+    }
+    else{
+        $autor->alteraAutor($id_autor);
+    }
+}
 ?>

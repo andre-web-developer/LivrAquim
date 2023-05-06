@@ -1,41 +1,90 @@
-<link rel="stylesheet" href="../css/cabecalho.css">
-<header>
-   <a href="bem_vindo.php"><img class="logo" src="../img/logo-cabecalho.png" alt="livraquim logo"></a>
-   <input type="checkbox" id="menu-bar">
-   <label for="menu-bar">☰</label>
-   <nav class="nav-links">
-      <ul>
-         <li><a href="form_venda.php">Vendas</a></li>
-         
-         <li><a href="#">Cadastrar +</a>
-            <ul>
-               <li><a href="form_livro.php">Livros</a></li>
-               <li><a href="form_editora.php">Editora</a></li>
-               <li><a href="form_autor.php">Autor</a></li>
-               <li><a href="form_tema.php">Tema</a></li>
-            </ul>
-         </li>
-         
-         <li><a href="#">Listar +</a>
-            <ul>
-               <li><a href="listar_livro.php">Livros</a></li>
-               <li><a href="listar_editora.php">Editora</a></li>
-               <li><a href="listar_autor.php">Autor</a></li>
-               <li><a href="listar_tema.php">Tema</a></li>
-            </ul>
-         </li>
-         
-         <li><a href="#">Relatórios +</a>
-            <ul>
-               <li><a href="#">Diário</a></li>
-               <li><a href="#">Semanal</a></li>
-               <li><a href="#">Mensal</a></li>
-               <li><a href="#">Anual</a></li>
-            </ul>
-         </li>
-      </ul>
-   </nav>
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/cabecalho.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+<body>
+    <nav>
+      <div class="navbar">
+        <i class='bx bx-menu'></i>
+        <div class="logo"><a href="bem_vindo.php"><img src="../img/logo-cabecalho.png" alt="livraquim logo"></a></div>
+        <div class="nav-links">
+          <div class="sidebar-logo">
+            <span class="logo-name">LivrAquim</span>
+            <i class='bx bx-x' ></i>
+          </div>
+          <ul class="links">
+            <li><a href="#">VENDAS</a></li>
+            
+            <li>
+              <a href="#">CADASTRAR</a>
+              <i class='bx bxs-chevron-down js-arrow arrow '></i>
+              <ul class="js-sub-menu sub-menu">
+                <li><a href="form_livro.php">Livro</a></li>
+                <li><a href="form_tema.php">Tema</a></li>
+                <li><a href="form_autor.php">Autor</a></li>
+                <li><a href="form_editora.php">Editora</a></li>
+              </ul>
+            </li>
 
+            <li>
+              <a href="#">LISTAR</a>
+              <i class='bx bxs-chevron-down js-arrow arrow '></i>
+              <ul class="js-sub-menu sub-menu">
+                <li><a href="listar_livro.php">Livro</a></li>
+                <li><a href="listar_tema.php">Tema</a></li>
+                <li><a href="listar_autor.php">Autor</a></li>
+                <li><a href="listar_editora.php">Editora</a></li>
+              </ul>
+            </li>
 
-   <a href="../controle/login.php?sair=true" class="sair-link"><button class="sair">Sair</button></a>
-</header>
+            <li>
+              <a href="#">RELATÓRIO</a>
+              <i class='bx bxs-chevron-down js-arrow arrow '></i>
+              <ul class="js-sub-menu sub-menu">
+                <li><a href="#">Diário</a></li>
+                <li><a href="#">Semanal</a></li>
+                <li><a href="#">Mensal</a></li>
+                <li><a href="#">Anual</a></li>
+              </ul>
+            </li>
+            <li><a href="../controle/login.php?sair=true" class="sair-links"><button class="sair">Sair</button></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      // sidebar open close js code
+      let navLinks = document.querySelector(".nav-links");
+      let menuOpenBtn = document.querySelector(".navbar .bx-menu");
+      let menuCloseBtn = document.querySelector(".nav-links .bx-x");
+      menuOpenBtn.onclick = function() {
+      navLinks.style.left = "0";
+      }
+      menuCloseBtn.onclick = function() {
+      navLinks.style.left = "-100%";
+      }
+
+      // sidebar submenu open close js code
+      let htmlcssArrow = document.querySelector(".htmlcss-arrow");
+      htmlcssArrow.onclick = function() {
+        navLinks.classList.toggle("show1");
+      }
+      let moreArrow = document.querySelector(".more-arrow");
+      moreArrow.onclick = function() {
+        navLinks.classList.toggle("show2");
+      }
+      let jsArrow = document.querySelector(".js-arrow");
+      jsArrow.onclick = function() {
+        navLinks.classList.toggle("show3");
+      }
+    </script>
+
+  </body>
+  
+</html>

@@ -71,7 +71,7 @@ INSERT INTO editora(nome,cnpj,telefone) VALUES("Planeta Gibi","4578545","(42)323
 INSERT INTO editora(nome,cnpj,telefone) VALUES("Planeta","88885520","(42)3231-1232");
 
 INSERT INTO tema(tema) VALUES("Informática");
-INSERT INTO tema(tema) VALUES("Autoajuda");
+INSERT INTO tema(tema) VALUES("Auto ajuda");
 INSERT INTO tema(tema) VALUES("Romance");
 INSERT INTO tema(tema) VALUES("Ficção");
 INSERT INTO tema(tema) VALUES("Infantil");

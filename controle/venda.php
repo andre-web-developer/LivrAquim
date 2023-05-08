@@ -18,7 +18,7 @@ function mostrarProdutos(){
                             echo "<option value=$i>-</option>";
                         
                         else
-                          echo"<option value=$i>$i</option>";      
+                            echo"<option value=$i>$i</option>";      
                     }
                     echo "</select> <br>";
         

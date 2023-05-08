@@ -1,7 +1,7 @@
 <?php
- require_once("../controle/login.php");
- testa_login();
- require("cabecalho.php"); 
+  require_once("../controle/login.php");
+  testa_login();
+  require("cabecalho.php"); 
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -21,6 +21,8 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Editora</th>
+            <th scope="col">CNPJ</th>
+            <th scope="col">Telefone</th>
             <th scope="col">Alterar</th>
             <th scope="col">Deletar</th>
           </tr>

@@ -6,6 +6,7 @@
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
   </head>
 <body>
     <nav>
@@ -14,11 +15,11 @@
         <div class="logo"><a href="bem_vindo.php"><img src="../img/logo-cabecalho.png" alt="livraquim logo"></a></div>
         <div class="nav-links">
           <div class="sidebar-logo">
-            <span class="logo-name">LivrAquim</span>
+            <span class="logo-name"><a href="bem_vindo.php">LivrAquim</a></span>
             <i class='bx bx-x' ></i>
           </div>
           <ul class="links">
-            <li><a href="#">VENDAS</a></li>
+            <li><a href="form_venda.php">VENDAS</a></li>
             
             <li>
               <a href="#">CADASTRAR</a>
@@ -52,9 +53,9 @@
                 <li><a href="#">Anual</a></li>
               </ul>
             </li>
-            <li><a href="../controle/login.php?sair=true" class="sair-links"><button class="sair">Sair</button></a></li>
           </ul>
         </div>
+        <a href="../controle/login.php?sair=true" class="sair-a"><button class="sair">Sair</button></a>
       </div>
     </nav>
 

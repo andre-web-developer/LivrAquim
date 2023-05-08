@@ -6,9 +6,6 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-body{
- 
-}
 nav{
   top: 0;
   left: 0;
@@ -34,12 +31,25 @@ nav .navbar{
   text-decoration: none;
   font-weight: 600;
 }
+.logo-name a{
+  text-decoration: none;
+  color: #fff;
+}
 nav .navbar .nav-links{
-  line-height: 70px;
+  line-height: 100px;
   height: 100%;
 }
 nav .navbar .links{
   display: flex;
+}
+.links li a{
+  transition: .5s;
+}
+.links li a:hover{
+  scale: 1.1;
+}
+.links li a:active{
+  scale: 1.1;
 }
 nav .navbar .links li{
   position: relative;
@@ -63,10 +73,9 @@ nav .navbar .links li a{
   }
 
 nav .navbar .links li .arrow{
-  /* background: red; */
   height: 100%;
   width: 22px;
-  line-height: 70px;
+  line-height: 100px;
   text-align: center;
   display: inline-block;
   color: #fff;
@@ -96,81 +105,6 @@ nav .navbar .links li:hover .js-sub-menu{
   font-size: 15px;
   font-weight: 500;
 }
-.navbar .links li .sub-menu .more-arrow{
-  line-height: 40px;
-}
-.navbar .links li .htmlCss-more-sub-menu{
-  /* line-height: 40px; */
-}
-.navbar .links li .sub-menu .more-sub-menu{
-  position: absolute;
-  top: 0;
-  left: 100%;
-  border-radius: 0 4px 4px 4px;
-  z-index: 1;
-  display: none;
-}
-.links li .sub-menu .more:hover .more-sub-menu{
-  display: block;
-}
-.navbar .search-box{
-  position: relative;
-   height: 40px;
-  width: 40px;
-}
-.navbar .search-box i{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  line-height: 40px;
-  text-align: center;
-  font-size: 22px;
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.navbar .search-box .input-box{
-  position: absolute;
-  right: calc(100% - 40px);
-  top: 80px;
-  height: 60px;
-  width: 300px;
-  background: #52AADB;
-  border-radius: 6px;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.4s ease;
-}
-.navbar.showInput .search-box .input-box{
-  top: 65px;
-  opacity: 1;
-  pointer-events: auto;
-  background: #52AADB;
-}
-.search-box .input-box::before{
-  content: '';
-  position: absolute;
-  height: 20px;
-  width: 20px;
-  background: #52AADB;
-  right: 10px;
-  top: -6px;
-  transform: rotate(45deg);
-}
-.search-box .input-box input{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 4px;
-  transform: translate(-50%, -50%);
-  height: 35px;
-  width: 280px;
-  outline: none;
-  padding: 0 15px;
-  font-size: 16px;
-  border: none;
-}
 .navbar .nav-links .sidebar-logo{
   display: none;
 }
@@ -194,10 +128,7 @@ nav .navbar .links li:hover .js-sub-menu{
     font-size: 15px;
   }
 }
-@media (max-width:800px){
-  nav{
-    /* position: relative; */
-  }
+@media (max-width:865px){
   .navbar .bx-menu{
     display: block;
   }
@@ -249,33 +180,6 @@ nav .navbar .links li .sub-menu li{
   border-bottom: none;
 
 }
-.navbar .links li .sub-menu .more-sub-menu{
-  display: none;
-  position: relative;
-  left: 0;
-}
-.navbar .links li .sub-menu .more-sub-menu li{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.links li:hover .htmlcss-arrow,
-.links li:hover .js-arrow{
-  transform: rotate(0deg);
-  }
-  .navbar .links li .sub-menu .more-sub-menu{
-    display: none;
-  }
-  .navbar .links li .sub-menu .more span{
-    /* background: red; */
-    display: flex;
-    align-items: center;
-    /* justify-content: space-between; */
-  }
-
-  .links li .sub-menu .more:hover .more-sub-menu{
-    display: none;
-  }
   nav .navbar .links li:hover .htmlCss-sub-menu,
   nav .navbar .links li:hover .js-sub-menu{
     display: none;
@@ -293,6 +197,11 @@ nav .navbar .links li .sub-menu li{
       transform: rotate(90deg);
     }
 }
+@media (max-width:500px) {
+  .logo{
+    display: none;
+  }
+}
 @media (max-width:370px){
   nav .navbar .nav-links{
   max-width: 100%;
@@ -300,10 +209,6 @@ nav .navbar .links li .sub-menu li{
 }
 
 /*##### ESTILO DO BOTÃO DE SAIR #####*/
-.sair-link{
-  padding: 10px 10px 10px 0;
-}
-
 .sair {
   border-radius: 15px;
   text-transform: uppercase;
@@ -316,7 +221,6 @@ nav .navbar .links li .sub-menu li{
   background-color: #fff;
   border: 1px solid transparent;
   transition: 1s;
-  font-family: 'Poppins', sans-serif;
 }
 
 .sair:hover {

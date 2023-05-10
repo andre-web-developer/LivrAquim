@@ -53,10 +53,10 @@
         $banco = new Banco();
         $sql = "INSERT INTO livro(isbn,titulo,ano,id_autor,id_tema,id_editora,precocompra,precovenda,quantidade,foto) VALUES ('$isbn','$titulo','$ano','$id_autor','$id_tema','$id_editora','$precocompra','$precovenda','$quantidade','$caminhocompleto')";
         if($banco->executar($sql)){
-            header ("Location:../view/sucessocadastro.php");
+            header ("Location:../view/sucessocadastro.php?pagina=livro");
         
         }else{
-            header("Location:../view/falhacadastro.php");
+            header("Location:../view/falhacadastro.php?pagina=livro");
         }
     }
 

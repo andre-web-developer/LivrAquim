@@ -9,7 +9,7 @@ function mostrarProdutos(){
 
     $resultado = $banco->consultar($sql);
     while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
-        echo "<img src='$linha[foto]' width='150' height='150'><br>";
+        echo "<img src='../$linha[foto]' width='150' height='150'><br>";
         echo "ISBN: $linha[isbn] <br>";
         echo "Título: $linha[titulo] <br>";
         echo "Quantidade: <select name= '$linha[id_livro]' id='quantidade$linha[id_livro]' onChange='update($linha[id_livro])'>";
@@ -47,7 +47,7 @@ function mostrarCompra(){
         $sql = "select*from livro where id_livro='$id_livro'";
         $resultado = $banco->consultar($sql);
 
-        echo "Foto livro: <img src='$resultado[foto]' width='150' height='150'><br>";
+        echo "Foto livro: <img src='../$resultado[foto]' width='150' height='150'><br>";
         echo "ISBN: $resultado[isbn] <br>";
         echo "Título: $resultado[titulo] <br>";
         echo "Quantidade vendida: $quantidade <br>";

@@ -6,7 +6,7 @@ class Banco extends PDO{
     public $conex;
 
     public function __construct(){
-        $this->conex = new PDO('mysql:host=localhost;dbname=livraria',"root","");
+        $this->conex = new PDO('mysql:host=localhost;dbname=livraria',"root","",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
     }
 
     public function executar($sql){

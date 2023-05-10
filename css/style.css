@@ -32,7 +32,7 @@ body {
 .content:before {
     content: "";
     position: absolute;
-    background-color: #52AADB;
+    background-color: #007bff;
     width: 40%;
     height: 100%;
     border-top-left-radius: 15px;
@@ -54,7 +54,7 @@ body {
 }
 
 .title-second {
-    color: #52AADB;
+    color: #007bff;
     font-size: 5em;
     padding-bottom: 50px;
 }
@@ -126,7 +126,7 @@ input:-webkit-autofill {
     align-self: center;
     border: none;
     margin-top: 1rem;
-    background-color: #52AADB;
+    background-color: #007bff;
     border: 1px solid transparent;
     transition: 1s;
     font-family: 'Poppins', sans-serif;
@@ -134,8 +134,8 @@ input:-webkit-autofill {
 
 .btn:hover {
     background-color: #fff;
-    color: #52AADB;
-    border: 1px solid #52AADB;
+    color: #007bff;
+    border: 1px solid #007bff;
 }
 
 .forget-password {
@@ -150,7 +150,7 @@ input:-webkit-autofill {
 }
 
 .forget-password a:hover {
-    color: #52AADB;
+    color: #007bff;
     font-size: 16px;
 }
 

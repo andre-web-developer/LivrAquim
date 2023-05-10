@@ -19,11 +19,11 @@
 
         //executar a sql e testar se retornou verdadeiro(sucesso) ou falso(falha)
         if($banco->executar($sql)){
-            header("Location:../view/sucessocadastro.php");
+            header("Location:../view/sucessocadastro.php?pagina=tema");
 
         }
         else{
-            header("Location:../view/falhacadastro.php");
+            header("Location:../view/falhacadastro.php?pagina=tema");
         }
     }
 

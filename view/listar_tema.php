@@ -1,7 +1,7 @@
 <?php
- require_once("../controle/login.php");
- testa_login();
- require("cabecalho.php"); 
+  require_once("../controle/login.php");
+  testa_login();
+  require("cabecalho.php"); 
 ?>
 <!DOCTYPE html>
 <html lang="pt">

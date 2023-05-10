@@ -13,7 +13,7 @@ if(isset($_POST['nome'])){
     
     }
     else{
-        header("Location:../view/falhacadastro.php");
+        header("Location:../view/falhacadastro.php?pagina=autor");
     }
 }
 

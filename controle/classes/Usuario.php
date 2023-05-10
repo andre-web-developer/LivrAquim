@@ -2,23 +2,23 @@
 
 class Usuario{
 
-       public $_SESSION;
+        public $_SESSION;
 
         private $nome;
         private $login;
         private $senha;
 
         public function __construct($nome,$login,$senha){
-           $this->nome=$nome;
-           $this->login=$login;
-           $this->senha=$senha;
+            $this->nome=$nome;
+            $this->login=$login;
+            $this->senha=$senha;
         }
 
         public function logar(){
              //criar a sessão
-             session_start();
-             $_SESSION['nome']=$this->nome; 
-             header("Location:../view/bem_vindo.php");           
+            session_start();
+            $_SESSION['nome']=$this->nome; 
+            header("Location:../view/bem_vindo.php");           
         }
 
         public function testaLogin(){

@@ -30,10 +30,13 @@
         <form enctype="multipart/form-data" action="../controle/livro.php" method="POST">
             <div class="form-group">
                 <label><h6>Foto da capa:</h6></label>
-                    <input type="file" id="fotolivro" name="foto" multiple class="form-control ">
-                        <div class="mb-2 d-flex justify-content-center"  id="img" style="display: none;">
-                            <img id="preview" width="150px" height="150px" src="" > 
-                        </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="fotolivro" name="foto">
+                        <label class="custom-file-label" for="customFile">Escolher arquivo</label>
+                    </div>
+                    <div class="text-center mt-4"  id="img" style="display: none;">
+                        <img id="preview" width="150px" height="150px" src="" > 
+                    </div>
             </div>
 
         <script type="text/javascript">

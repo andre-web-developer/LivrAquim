@@ -9,6 +9,7 @@ function mostrarProdutos(){
 
     $resultado = $banco->consultar($sql);
     while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
+        //preciso colocar os itens numa dive completa fora da imagem para conseguir jogar tudo por lado dela!!!
     echo"   <div class='form-group'>
                 <img src='../$linha[foto]' width='150'>
                 

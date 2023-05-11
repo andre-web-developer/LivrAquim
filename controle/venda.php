@@ -10,20 +10,22 @@ function mostrarProdutos(){
     $resultado = $banco->consultar($sql);
     while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
         //preciso colocar os itens numa dive completa fora da imagem para conseguir jogar tudo por lado dela!!!
-    echo"   <div class='form-group'>
-                <img src='../$linha[foto]' width='150' height='200px'>
-                <div class=''>
-                    <div class='form-group row'>
-                        <label for='staticEmail' class='col-sm-2 col-form-label'>ISBN:</label>
-                        <div class='col-sm-10'>
-                            <input type='text' readonly class='form-control-plaintext' id='staticEmail' value='$linha[isbn]'>
+    echo"   <div class='row'>
+                <div class='col'>
+                    <img class='img-fluid m-4' src='../$linha[foto]' width='150' height='200px'>
+                </div>
+                
+                <div class='col'>
+
+                    <div class='form-inline'>
+                        <div class='form-group mb-2'>
+                            <label for='staticIsbn' class='sr-only'>ISBN:</label>
+                            <input type='text' readonly class='form-control-plaintext' id='staticIsbn' value='$linha[isbn]'>
                         </div>
-                    </div>
-                    
-                    <div class='form-group row'>
-                        <label for='staticEmail' class='col-sm-2 col-form-label'>Título:</label>
-                        <div class='col-sm-10'>
-                            <input type='text' readonly class='form-control-plaintext' id='staticEmail' value='$linha[titulo]'>
+                        
+                        <div class='form-group mx-sm-3 mb-2'>
+                                <label for='staticTitilo' class='col-sm-2 col-form-label'>Título:</label>
+                                <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$linha[titulo]'>
                         </div>
                     </div>
 

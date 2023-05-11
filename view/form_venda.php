@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/listar.css">
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
     <title>Formulário Vendas</title>
 </head>
 <body>
@@ -27,12 +28,13 @@
                 ?>
 
             <div id="listarCentro">
-                <div class="form-inline">
-                    <div class="form-group mx-sm-5 mb-2">
-                        <label for="precoprevio" class="sr-only">Preço total</label>
+                <div class="row">
+                    <div class="col">
                         <input type="text" class="form-control" name="precoprevio" id="precoprevio" placeholder="Preço total">
                     </div>
-                    <button type="submit" class="btn btn-primary mb-2">Enviar</button>
+                    <div class="col">
+                        <input type="submit" class="btn btn-primary mb-2" value="Enviar">
+                    </div>
                 </div>
             </div>
         </form>

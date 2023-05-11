@@ -18,7 +18,9 @@
             $usuario->logar();
         }
         else{
-            echo "deu ruim";
+            echo "  <div class='alert alert-danger' role='alert'>
+                        Seu CPF ou senha foram digitados incorretamente, tente novamente.
+                    </div>";
             return false;
         }
 

@@ -2,11 +2,19 @@
     require_once ("../banco/Banco.php");
     require_once ("classes/Tema.php");
 
+    if (isset($_POST['id_tema'])) {
+        $id_tema = $_POST['id_tema'];
+        $tema = $_POST['tema'];
+
+        $objeto = new Tema();
+        $objeto->atualizaTema($id_tema,$tema);
+    }
+
     //testar se o usuario enviou algo via POST
 
-    if(isset($_POST['tema'])){
+    if((isset($_POST['tema']))&&(!isset($_POST['id_tema']))){
 
-    //pegar os valores dos names do formulario POST
+        //pegar os valores dos names do formulario POST
         $tema = $_POST['tema'];
 
         //preparar para enviar para o banco de dados
@@ -35,15 +43,22 @@
     if(isset($_GET['id_tema'])){
         $id_tema = $_GET['id_tema'];
         $tema = new Tema();
-        switch ($_GET['op']) {
-            case 'd':
-                $tema->deletaTema($id_tema);
-            break;
-            
-            case 'a':
-                $tema->alteraTema($id_tema);
-            break;
+        if (isset($_GET['op'])) {
+            switch ($_GET['op']) {
+                case 'd':
+                    $tema->deletaTema($id_tema);
+                break;
+                
+                case 'a':
+                    header("Location:../view/form_alteraTema.php?id_tema=$id_tema");
+                break;
+            }
         }
+    }
+
+    function retornaTema($id_tema){
+        $tema = new Tema();
+        return $tema->getTema($id_tema);
     }
 
 ?>

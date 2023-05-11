@@ -11,42 +11,49 @@ function mostrarProdutos(){
     while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
         //preciso colocar os itens numa dive completa fora da imagem para conseguir jogar tudo por lado dela!!!
     echo"   <div class='form-group'>
-                <img src='../$linha[foto]' width='150'>
-                
-                <div class='form-group row'>
-                    <label for='staticEmail' class='col-sm-2 col-form-label'>ISBN:</label>
-                    <div class='col-sm-10'>
-                        <input type='text' readonly class='form-control-plaintext' id='staticEmail' value='$linha[isbn]'>
+                <img src='../$linha[foto]' width='150' height='200px'>
+                <div class=''>
+                    <div class='form-group row'>
+                        <label for='staticEmail' class='col-sm-2 col-form-label'>ISBN:</label>
+                        <div class='col-sm-10'>
+                            <input type='text' readonly class='form-control-plaintext' id='staticEmail' value='$linha[isbn]'>
+                        </div>
                     </div>
+                    
+                    <div class='form-group row'>
+                        <label for='staticEmail' class='col-sm-2 col-form-label'>Título:</label>
+                        <div class='col-sm-10'>
+                            <input type='text' readonly class='form-control-plaintext' id='staticEmail' value='$linha[titulo]'>
+                        </div>
+                    </div>
+
+                        <div class='form-group col-md-4'>
+                            <label>Quantidade:</label>
+                            <select name='$linha[id_livro]' id='quantidade$linha[id_livro]' onChange='update($linha[id_livro])' class='form-control'>
+                                <option selected>Escolher...</option>";
+                                for($i=0;$i<=$linha['quantidade'];$i++){
+                                    if($i==0)
+                                        echo "<option value=$i>-</option>";
+                                    
+                                    else
+                                        echo "<option value=$i>$i</option>";      
+                                }
+                        echo"</select>
+                        </div>
+
+                            <div class='form-group'>
+                                <label>Preço Unitário:</label>
+                                <input type='text' disabled='' id='precovenda$linha[id_livro]' value='$linha[precovenda]' class='form-control'>
+                            </div> 
+                            <span id='mostratotalitem$linha[id_livro]' style='display:none;' > 
+                                <div class='form-group'>
+                                    <label>Subtotal:</label>
+                                    <input type='text' disabled='' id='precototalitem$linha[id_livro]' value='' class='form-control'>
+                                </div>
+                            </span><br>
                 </div>
-                
-                <div class='form-group row'>
-                    <label for='staticEmail' class='col-sm-2 col-form-label'>Título:</label>
-                    <div class='col-sm-10'>
-                        <input type='text' readonly class='form-control-plaintext' id='staticEmail' value='$linha[titulo]'>
-                    </div>
-                </div>
-
-                    <div class='form-group col-md-4'>
-                        <label for='inputEstado'>Quantidade:</label>
-                        <select name='$linha[id_livro]' id='quantidade$linha[id_livro]' onChange='update($linha[id_livro])' class='form-control'>
-                            <option selected>Escolher...</option>";
-                            for($i=0;$i<=$linha['quantidade'];$i++){
-                                if($i==0)
-                                    echo "<option value=$i>-</option>";
-                                
-                                else
-                                    echo "<option value=$i>$i</option>";      
-                            }
-                    echo"</select>
-                    </div>
-
-
-                        <label>Preço Unitário:</label> 
-                        <input type='text' disabled='' id='precovenda$linha[id_livro]' value='$linha[precovenda]'><br>
-                        <span id='mostratotalitem$linha[id_livro]' style='display:none;' > Subtotal:<input type='text' disabled='' id='precototalitem$linha[id_livro]' value=''></span><br>
             </div>";   
-                    }             
+        }             
 }
 if(isset($_POST['precoprevio'])){
     foreach($_POST as $id_livro => $quantidade){

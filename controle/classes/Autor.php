@@ -33,8 +33,21 @@
       }
     }
 
-    public function alteraAutor($id_autor){
+    public function getNome($id_autor){
+      $sql = "SELECT*FROM autor WHERE id_autor=$id_autor";
+      $resultado = $this->banco->consultar($sql);
+      return $resultado['nome'];
+    }
 
+    public function atualizaAutor($id_autor,$autor){
+        $sql="UPDATE autor SET nome='$autor' WHERE id_autor='$id_autor'";
+        $resultado = $this->banco->executar($sql);
+        if($resultado){
+          header("Location:../view/listar_autor.php");
+        }
+        else{
+          header("Location:../view/falha_atualizar.php?pagina=autor");
+        }
     }
   }
 ?>

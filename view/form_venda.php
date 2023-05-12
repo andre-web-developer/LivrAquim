@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/listar.css">
+    <link rel="stylesheet" href="../css/linha.css">
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
     <title>Formulário Vendas</title>
 </head>
@@ -19,6 +20,7 @@
         <div class="text-center mt-4 mb-4">
             <h2>Cadastro de vendas</h2>
             <p>Prencha os todos os dados do formulário sempre seguindo os exemplos quando existentes.</p>
+            <hr class="linha">
         </div>
 
         <form action="../controle/venda.php" method="POST">

@@ -10,23 +10,12 @@
         $objeto->atualizaTema($id_tema,$tema);
     }
 
-    //testar se o usuario enviou algo via POST
-
     if((isset($_POST['tema']))&&(!isset($_POST['id_tema']))){
-
-        //pegar os valores dos names do formulario POST
         $tema = $_POST['tema'];
-
-        //preparar para enviar para o banco de dados
-        //criar uma conexão com o banco
-
         $banco = new Banco();
-
-        //criar a sql para inserir
         $sql = "INSERT INTO tema(tema) VALUES('$tema')";
-
-        //executar a sql e testar se retornou verdadeiro(sucesso) ou falso(falha)
-        if($banco->executar($sql)){
+        $resultado = $banco->executar($sql);
+        if($resultado){
             header("Location:../view/sucessocadastro.php?pagina=tema");
 
         }

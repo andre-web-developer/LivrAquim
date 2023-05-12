@@ -36,8 +36,21 @@
       }
     }
 
-    public function alteraEditora($id_editora){
+    public function getEditora($id_editora){
+      $sql = "SELECT*FROM editora WHERE id_editora=$id_editora";
+      $resultado = $this->banco->consultar($sql);
+      return $resultado;
+    }
 
+    public function atualizaEditora($id_editora,$editora,$cnpj,$telefone){
+        $sql="UPDATE editora SET nome='$editora', cnpj='$cnpj', telefone='$telefone' WHERE id_editora='$id_editora'";
+        $resultado = $this->banco->executar($sql);
+        if($resultado){
+          header("Location:../view/listar_editora.php");
+        }
+        else{
+          header("Location:../view/falha_atualizar.php?pagina=editora");
+        }
     }
   }
 ?>

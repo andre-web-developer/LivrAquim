@@ -47,10 +47,10 @@
         $sql="UPDATE tema SET tema='$tema' WHERE id_tema='$id_tema'";
         $resultado = $this->banco->executar($sql);
         if($resultado){
-          header("Location:../view/lista_tema.php");
+          header("Location:../view/listar_tema.php");
         }
         else{
-          header("Location:../view/falhaatualizar.php?pagina=tema");
+          header("Location:../view/falha_atualizar.php?pagina=tema");
         }
     }
   }

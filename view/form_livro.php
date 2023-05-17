@@ -39,24 +39,7 @@
                         <img id="preview" width="150px" height="200px" src="" > 
                     </div>
             </div>
-
-        <script type="text/javascript">
-
-            function readImage(){
-            if (this.files && this.files[0]){
-                var file = new FileReader();
-                file.onload = function(e) {
-                document.getElementById("preview").src = e.target.result;
-                };       
-                    file.readAsDataURL(this.files[0]);
-                    document.getElementById("img").style.display = "block";
-                }
-            }
-
-            document.getElementById("fotolivro").addEventListener("change", readImage, false);
-        </script>
     
-        <div class="clearfix"></div>
             <div class="form-row">
 
                 <div class="form-group col-md-4">
@@ -77,7 +60,6 @@
             </div>
 
             <div class="form-row">
-
                 <div class="form-group col-md-7">
                     <label><h6>Autor:</h6></label>
                     <select class="form-control" name="id_autor">
@@ -89,7 +71,7 @@
                 </div>
 
                 <div class="form-group col-md-5">
-                    <label><h6>Ano:</h6></label>
+                    <label class="form-label"><h6>Ano:</h6></label>
                         <select class="form-control" name="ano">
                             <?php
                             for ($i=2023; $i>=1950; $i--) { 
@@ -98,46 +80,68 @@
                             ?>
                         </select>                
                 </div>
-
             </div>
 
             <div class="form-row">
-            <div class="form-group col-md-5">
-                <label><h6>Editora:</h6></label>
-                <select class="form-control" name="id_editora">
-                    <?php
-                        mostrarEditoras();
-                        ?>
-                </select>
-            </div>
+                <div class="form-group col-md-5">
+                    <label><h6>Editora:</h6></label>
+                    <select class="form-control" name="id_editora">
+                        <?php
+                            mostrarEditoras();
+                            ?>
+                    </select>
+                </div>
 
-            <div class="form-group col-md-7">
-                <label><h6>Tema:</h6></label>
-                <select class="form-control" name="id_tema">
-                    <?php
-                        mostrarTemas();
-                        ?>
-                </select>
-            </div>
-
+                <div class="form-group col-md-7">
+                    <label><h6>Tema:</h6></label>
+                    <select class="form-control" name="id_tema">
+                        <?php
+                            mostrarTemas();
+                            ?>
+                    </select>
+                </div>
             </div>
                 
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label"><h6>Preço de Custo</h6></label>
                 <div class="col-sm-9">
-                    <input type="text" name="precocompra" class="form-control" placeholder="Ex: 32.90">
+                    <div class="form-group row">
+                        <label class="col-sm col-form-label"><h6>R$</h6></label>
+                        <div class="col-sm-11">
+                            <input type="text" name="precocompra" class="form-control" placeholder="Ex: 10.00">
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <div class="form-group row">
                 <label class="col-sm-3 col-form-label"><h6>Preço de Venda</h6></label>
                 <div class="col-sm-9">
-                    <input type="text" name="precovenda" class="form-control" placeholder="Ex: 54.90">
+                    <div class="form-group row">
+                        <label class="col-sm col-form-label "><h6>R$</h6></label>
+                        <div class="col-sm-11">
+                            <input type="text" name="precovenda" class="form-control" placeholder="Ex: 100.00">
+                        </div>
+                    </div>
                 </div>
+                <input type="submit" value="Cadastrar" class="btn btn-primary m-auto">
             </div>
-
-            <input type="submit" value="Enviar" class="btn btn-primary m-auto">
         </form>
     </div>
+    <script type="text/javascript">
+
+            function readImage(){
+            if (this.files && this.files[0]){
+                var file = new FileReader();
+                file.onload = function(e) {
+                document.getElementById("preview").src = e.target.result;
+                };       
+                    file.readAsDataURL(this.files[0]);
+                    document.getElementById("img").style.display = "block";
+                }
+            }
+
+            document.getElementById("fotolivro").addEventListener("change", readImage, false);
+    </script>
 </body>
 </html>

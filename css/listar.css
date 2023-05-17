@@ -3,14 +3,3 @@
   margin: 0 auto;
 }
 
-.form-group label {
-  float: left;
-  text-align: left;
-  font-weight: normal;
-}
-
-.form-group select {
-  display: inline-block;
-  width: auto;
-  vertical-align: middle;
-}

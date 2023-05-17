@@ -81,3 +81,7 @@ INSERT INTO autor(nome) VALUES ("Roger Pressman");
 INSERT INTO autor(nome) VALUES ("Ian Somerville");
 INSERT INTO autor(nome) VALUES ("Mário Sérgio Cortella");
 INSERT INTO autor(nome) VALUES ("Maurício de Souza");
+
+INSERT INTO formapagamento(formapagamento,descontoporcento) VALUES ("Dinheiro", 5);
+INSERT INTO formapagamento(formapagamento,descontoporcento) VALUES ("PIX", 5);
+INSERT INTO formapagamento(formapagamento,descontoporcento) VALUES ("Cartão", 5);

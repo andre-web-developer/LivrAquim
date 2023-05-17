@@ -10,44 +10,37 @@ function mostrarProdutos(){
     $resultado = $banco->consultar($sql);
     while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
         //preciso colocar os itens numa dive completa fora da imagem para conseguir jogar tudo por lado dela!!!
-    echo"   <div class='row venda'>
+    echo"<hr class='linha2'>   
+            <div class='row venda'>
                 <div class='col-sm-4 mb-5'>
                     <img class='img-fluid' src='../$linha[foto]' width='150' height='200px'>
                 </div>
                 
                 <div class='col-sm-8'>
-                    <div class='row m-0 ml-3'>
-                        <div class='form-group row'>
-                            <label for='staticIsbn' class='col-form-label'><h6>ISBN:</h6></label>
-                            <div class='col-sm-4'>
-                                <input type='text' readonly class='form-control-plaintext' id='staticIsbn' value='$linha[isbn]'>
-                            </div>
-                        </div>
-
-                        <div class='row'>
-                            <div class='form-group row>
-                                <label class='col-form-label'>Quantidade:
-                                    <select name='$linha[id_livro]' id='quantidade$linha[id_livro]' onChange='update($linha[id_livro])' class='form-control select ml-3'>
-                                        <option selected>Escolher...</option>";
-                                        for($i=0;$i<=$linha['quantidade'];$i++){
-                                            if($i==0)
-                                                echo "<option value=$i>-</option>";
-                                            
-                                            else
-                                                echo "<option value=$i>$i</option>";      
-                                        }
-                                echo"</select>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                        
                     <div class='row m-0'>
                         <label for='staticTitilo' class='col-form-label'><h6>Título:</h6></label>
                         <div class='col-sm-9'>
                             <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$linha[titulo]'>
                         </div>
                     </div>
+                
+
+                    <div class='row m-0'>
+                        <div class='form-group row>
+                            <label class='col-form-label'>Quantidade:
+                                <select name='$linha[id_livro]' id='quantidade$linha[id_livro]' onChange='update($linha[id_livro])' class='form-control select ml-3'>";
+                                    for($i=0;$i<=$linha['quantidade'];$i++){
+                                        if($i==0)
+                                            echo "<option selected value=$i>Escolher...</option>";
+                                        
+                                        else
+                                            echo "<option value=$i>$i</option>";      
+                                    }
+                            echo"</select>
+                            </label>
+                        </div>
+                    </div>
+                        
 
                     <div class='form-group'>
                         <label class=''>Preço Unitário:</label>
@@ -60,7 +53,8 @@ function mostrarProdutos(){
                         </div>
                     </span><br>
                 </div>
-            </div>";   
+            </div>
+            <hr class='linha2'>";   
         }             
 }
 if(isset($_POST['precoprevio'])){
@@ -83,16 +77,39 @@ function mostrarCompra(){
     foreach($livros as $id_livro => $quantidade) {
         $sql = "select*from livro where id_livro='$id_livro'";
         $resultado = $banco->consultar($sql);
+        $subtotal = $quantidade*$resultado['precovenda'];
 
-        echo "Foto livro: <img src='../$resultado[foto]' width='150' height='150'><br>";
-        echo "ISBN: $resultado[isbn] <br>";
-        echo "Título: $resultado[titulo] <br>";
-        echo "Quantidade vendida: $quantidade <br>";
-        echo "Subtotal do item:". $quantidade*$resultado['precovenda'];
-        echo "<br><br>";
-            
-    }
-    echo "Preço total da compra: ".$_SESSION['precoprevio'];
+        echo "  <hr class='linha2'>   
+                    <div class='row venda'>
+                        <div class='col-sm-6 mb-4 text-center'>
+                            <img src='../$resultado[foto]' width='150' height='200'>
+                        </div>
+                
+                        <div class='col-sm-6'>
+                            <div class='row m-0'>
+                                <label for='staticTitilo' class='col-form-label'><h6>Título:</h6></label>
+                                <div class='col-sm-10 mb-4'>
+                                    <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$resultado[titulo]'>
+                                </div>
+                            </div>
+
+                            <div class='row m-0'>
+                                <label for='staticTitilo' class='col-form-label'><h6>Quantidade vendida:</h6></label>
+                                <div class='col-sm-4 mb-4'>
+                                    <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$quantidade'>
+                                </div>
+                            </div>
+
+                            <div class='row m-0'>
+                                <label for='staticTitilo' class='col-form-label'><h6>Subtotal do item:</h6></label>
+                                <div class='col-sm-4'>
+                                    <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$subtotal'>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <hr class='linha2'>"; 
+            }
 }
 
 if (isset($_POST['pagamento'])) {

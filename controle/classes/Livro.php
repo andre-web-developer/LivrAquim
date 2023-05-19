@@ -24,8 +24,7 @@ class Livro{
                 livro.id_autor = autor.id_autor AND
                 livro.id_tema = tema.id_tema
                 ORDER BY quantidade DESC;";
-        $banco = new Banco();
-        $resultado = $banco->consultar($sql);
+        $resultado = $this->banco->consultar($sql);
         while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
         echo "  <tr>
                     <th scope='row'><img src='../$linha[foto]' width'50' height='100'></th>
@@ -35,8 +34,8 @@ class Livro{
                     <td class='px-50 py-5 text-center'>$linha[nome]</td>
                     <td class='px-50 py-5 text-center'>$linha[editora]</td>
                     <td class='px-50 py-5 text-center'>$linha[tema]</td>
-                    <td><a href='../controle/livro.php?id_livro=$linha[id_livro]&op=a'><button type='button' class='btn btn-warning'>Alterar</button></a></td>
-                    <td><a href='../controle/livro.php?id_livro=$linha[id_livro]&op=d'><button type='button' class='btn btn-danger'>Excluir</button></a></td>
+                    <td class='px-50 py-5 text-center'><a href='../controle/livro.php?id_livro=$linha[id_livro]&op=a'><button type='button' class='btn btn-warning'>Alterar</button></a></td>
+                    <td class='px-50 py-5 text-center'><a href='../controle/livro.php?id_livro=$linha[id_livro]&op=d'><button type='button' class='btn btn-danger'>Excluir</button></a></td>
                 </tr>";
         }
     }

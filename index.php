@@ -19,7 +19,7 @@
 <body>
     <div class="container">
             <?php 
-                require('view/form_login.php'); 
+                require('view/form_login.php');
             ?>
         </div>
 </body>

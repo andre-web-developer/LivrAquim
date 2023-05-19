@@ -18,9 +18,7 @@
             <span class="logo-name"><a href="bem_vindo.php">LivrAquim</a></span>
             <i class='bx bx-x' ></i>
           </div>
-          <ul class="links">
-            <li><a href="form_venda.php">VENDAS</a></li>
-            
+          <ul class="links">            
             <li>
               <a href="#">CADASTRAR</a>
               <i class='bx bxs-chevron-down js-arrow arrow'></i>
@@ -31,6 +29,8 @@
                 <li><a href="form_editora.php">Editora</a></li>
               </ul>
             </li>
+
+            <li><a href="form_venda.php">VENDAS</a></li>
 
             <li>
               <a href="#">LISTAR</a>

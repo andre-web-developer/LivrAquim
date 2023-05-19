@@ -36,8 +36,7 @@
             <label class="col-sm-3 col-form-label">Telefone:</label>
             <input type="text" class="form-control" name="telefone" value="<?php echo $editora['telefone']; ?>">
             <input type="submit" name="Enviar" class="btn btn-primary">
-            </div>
-        </div>
+          </div>
       </form>
     </div>
   </body>

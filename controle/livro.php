@@ -1,6 +1,23 @@
 <?php
 
-    include_once ("../banco/Banco.php");
+require_once  ("../banco/Banco.php");
+require_once  ("classes/Livro.php");
+
+    if (isset($_POST['id_livro'])) {
+        $id_livro = $_POST['id_livro'];
+        $isbn = $_POST['isbn'];
+        $titulo = $_POST['titulo'];
+        $ano = $_POST['ano'];
+        $quantidade = $_POST['quantidade'];
+        $precovenda = $_POST['precovenda'];
+        $precocompra = $_POST['precocompra'];
+
+        $precocompra = floatval($precocompra);
+        $precovenda = floatval($precovenda);
+    
+        $objeto = new Livro();
+        $objeto->atualizaLivro($id_livro,$isbn,$titulo,$ano,$quantidade,$precovenda,$precocompra);
+    }
 
     function mostrarAutor(){
         $banco = new Banco();
@@ -29,7 +46,7 @@
         }
     }
 
-    if (isset($_POST['isbn'])) {
+    if ((isset($_POST['isbn']))&&(!isset($_POST['id_livro']))){
         $isbn = $_POST['isbn'];
         $titulo = $_POST['titulo'];
         $ano = $_POST['ano'];
@@ -60,6 +77,29 @@
         }
     }
 
+    function listar(){
+        $livro = new Livro();
+        $livro->listarLivro();
+    }
     
-
+    if(isset($_GET['id_livro'])){
+        $id_livro = $_GET['id_livro'];
+        $livro = new Livro();
+        if (isset($_GET['op'])) {
+            switch ($_GET['op']) {
+                case 'd':
+                    $livro->deletaLivro($id_livro);
+                break;
+                
+                case 'a':
+                    header("Location:../view/form_alteraLivro.php?id_livro=$id_livro");
+                break;
+            }
+        }
+    }   
+    
+    function retornaLivro($id_livro){
+        $editora = new Livro();
+        return $editora->getLivro($id_livro);
+    }
 ?>

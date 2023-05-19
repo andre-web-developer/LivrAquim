@@ -4,6 +4,16 @@
     </div>
     <div class="second-column">
         <h1 class="title title-second">Login</h1>
+        <?php
+            if(isset($_GET['falha'])&&($_GET['falha']==true)) {
+                //echo "<script>alert('Senha ou CPF incorreto!');</script>";
+                //aprender a estiizar essa caceta
+                echo "  <dialog open id='favDialog'>
+                            <h4>Senha ou CPF incorreto!</h4>
+                        </dialog>";
+                
+            }
+        ?>
         <form class="form" action="controle/login.php" method="POST">
             <label class="label-input">
                 <i class="far fa-user icon-modify"></i>
@@ -21,3 +31,9 @@
         <p class="forget-password"><a href="#">Esqueceu sua senha?</a></p>
     </div>
 </div>
+<script>
+    (function(){
+        var favDialog = document.getElementById("favDialog");
+        favDialog.showModal();
+    })();
+</script>

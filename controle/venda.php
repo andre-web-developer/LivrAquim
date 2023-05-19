@@ -5,7 +5,7 @@ require_once ("../banco/Banco.php");
 function mostrarProdutos(){
     $banco = new Banco();
 
-    $sql = "select*from livro";
+    $sql = "select*from livro WHERE quantidade>0";
 
     $resultado = $banco->consultar($sql);
     while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
@@ -17,30 +17,29 @@ function mostrarProdutos(){
                 </div>
                 
                 <div class='col-sm-8'>
-                    <div class='row m-0'>
+                    <div class='row m-0 mb-3 text-center'>
                         <label for='staticTitilo' class='col-form-label'><h6>Título:</h6></label>
                         <div class='col-sm-9'>
-                            <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$linha[titulo]'>
+                            <input type='text' readonly class='text-center form-control-plaintext' id='staticTitilo' value='$linha[titulo]'>
                         </div>
                     </div>
                 
-
-                    <div class='row m-0'>
-                        <div class='form-group row>
-                            <label class='col-form-label'>Quantidade:
-                                <select name='$linha[id_livro]' id='quantidade$linha[id_livro]' onChange='update($linha[id_livro])' class='form-control select ml-3'>";
-                                    for($i=0;$i<=$linha['quantidade'];$i++){
-                                        if($i==0)
-                                            echo "<option selected value=$i>Escolher...</option>";
-                                        
-                                        else
-                                            echo "<option value=$i>$i</option>";      
-                                    }
-                            echo"</select>
-                            </label>
+                    <div class='row mb-3'>
+                        <div class='col-sm-3'>
+                            <label class='col-form-label'>Quantidade:</label>
+                        </div>
+                        <div class='col-sm-9'>
+                            <select name='$linha[id_livro]' id='quantidade$linha[id_livro]' onChange='update($linha[id_livro])' class='form-control'>";
+                                        for($i=0;$i<=$linha['quantidade'];$i++){
+                                            if($i==0)
+                                                echo "<option selected value=$i>Escolher...</option>";
+                                            
+                                            else
+                                                echo "<option value=$i>$i</option>";      
+                                        }
+                                echo"</select>
                         </div>
                     </div>
-                        
 
                     <div class='form-group'>
                         <label class=''>Preço Unitário:</label>

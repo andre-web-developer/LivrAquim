@@ -18,10 +18,7 @@
             $usuario->logar();
         }
         else{
-            echo "  <div class='alert alert-danger' role='alert'>
-                        Seu CPF ou senha foram digitados incorretamente, tente novamente.
-                    </div>";
-            return false;
+            header("Location:../index2.php?falha=true");
         }
 
     }

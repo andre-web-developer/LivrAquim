@@ -1,6 +1,7 @@
 <?php
     require_once("../controle/login.php");
     testa_login();
+    require_once("../controle/livro.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -10,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/listar.css">
+    <link rel="stylesheet" href="../css/linha.css">
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
     <title>Cadastro de Livro</title>
     <style>        
@@ -26,6 +28,7 @@
         <div class="text-center mt-4 mb-4">
             <h2>Cadastro de Livro</h2>
             <p>Prencha os todos os dados do formulário sempre seguindo os exemplos quando existentes.</p>
+            <hr class="linha">
         </div>
         
         <form enctype="multipart/form-data" action="../controle/livro.php" method="POST">
@@ -64,9 +67,8 @@
                     <label><h6>Autor:</h6></label>
                     <select class="form-control" name="id_autor">
                         <?php
-                            require_once("../controle/livro.php");
                             mostrarAutor();
-                            ?>
+                        ?>
                     </select>
                 </div>
 
@@ -88,7 +90,7 @@
                     <select class="form-control" name="id_editora">
                         <?php
                             mostrarEditoras();
-                            ?>
+                        ?>
                     </select>
                 </div>
 
@@ -97,7 +99,7 @@
                     <select class="form-control" name="id_tema">
                         <?php
                             mostrarTemas();
-                            ?>
+                        ?>
                     </select>
                 </div>
             </div>

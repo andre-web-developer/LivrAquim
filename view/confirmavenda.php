@@ -35,7 +35,7 @@
                 <h2>Metodo de pagamento:</h2>
                 <p>Selecione o metodo de pagamento desejado</p>
                 <?php
-                    echo "<h5>Preço total da compra:$_SESSION[precoprevio]</h5>";
+                    echo "<h5>Preço total da compra: R$$_SESSION[precoprevio]</h5>";
                 ?>
             </div>
             

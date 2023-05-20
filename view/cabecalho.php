@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/cabecalho.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Boxicons CDN Link -->
+    <link rel="stylesheet" href="../cabecalho.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
+
   <body>
     <nav>
       <div class="navbar">
@@ -15,38 +14,36 @@
         <div class="logo"><a href="bem_vindo.php"><img src="../img/logo-cabecalho.png" alt="livraquim logo"></a></div>
         <div class="nav-links">
           <div class="sidebar-logo">
-            <span class="logo-name"><a href="bem_vindo.php">LivrAquim</a></span>
-            <i class='bx bx-x' ></i>
+            <span class="logo-name">LivrAquim</span>
+            <i class='bx bx-x'></i>
           </div>
-          <ul class="links">            
+          <ul class="links">
             <li>
               <a href="#">CADASTRAR</a>
-              <i class='bx bxs-chevron-down js-arrow arrow'></i>
-              <ul class="js-sub-menu sub-menu">
-                <li><a href="form_livro.php">Livro</a></li>
-                <li><a href="form_tema.php">Tema</a></li>
-                <li><a href="form_autor.php">Autor</a></li>
-                <li><a href="form_editora.php">Editora</a></li>
+              <i class='bx bxs-chevron-down cad-arrow arrow  '></i>
+              <ul class="cad-sub-menu sub-menu">
+                <li><a href="form_livro">Livro</a></li>
+                <li><a href="form_tema">Tema</a></li>
+                <li><a href="form_autor">Autor</a></li>
+                <li><a href="form_editora">Editora</a></li>
+                
               </ul>
             </li>
-
             <li><a href="form_venda.php">VENDAS</a></li>
-
             <li>
               <a href="#">LISTAR</a>
-              <i class='bx bxs-chevron-down js-arrow arrow '></i>
-              <ul class="js-sub-menu sub-menu">
-                <li><a href="listar_livro.php">Livro</a></li>
-                <li><a href="listar_tema.php">Tema</a></li>
-                <li><a href="listar_autor.php">Autor</a></li>
-                <li><a href="listar_editora.php">Editora</a></li>
+              <i class='bx bxs-chevron-down lis-arrow arrow '></i>
+              <ul class="lis-sub-menu sub-menu">
+                <li><a href="listar_livro">Livro</a></li>
+                <li><a href="listar_tema">Tema</a></li>
+                <li><a href="listar_autor">Autor</a></li>
+                <li><a href="listar_editora">Editora</a></li>
               </ul>
             </li>
-
             <li>
-              <a href="#">RELATÓRIO</a>
-              <i class='bx bxs-chevron-down js-arrow arrow '></i>
-              <ul class="js-sub-menu sub-menu">
+              <a href="#">RELATÓRIOS</a>
+              <i class='bx bxs-chevron-down rel-arrow arrow'></i>
+              <ul class="rel-sub-menu sub-menu">
                 <li><a href="form_relatDiario.php">Diário</a></li>
                 <li><a href="form_relatMensal.php">Mensal</a></li>
                 <li><a href="form_relatAnual.php">Anual</a></li>
@@ -54,7 +51,9 @@
             </li>
           </ul>
         </div>
-        <a href="../controle/login.php?sair=true" class="sair-a"><button class="sair">Sair</button></a>
+        <div class="sair">
+          <a href="../controle/login.php?sair=true"><i class='bx bx-log-out'></i></a>
+        </div>
       </div>
     </nav>
 
@@ -64,23 +63,26 @@
       let menuOpenBtn = document.querySelector(".navbar .bx-menu");
       let menuCloseBtn = document.querySelector(".nav-links .bx-x");
       menuOpenBtn.onclick = function() {
-      navLinks.style.left = "0";
+        navLinks.style.left = "0";
       }
       menuCloseBtn.onclick = function() {
-      navLinks.style.left = "-100%";
+        navLinks.style.left = "-100%";
       }
 
+
       // sidebar submenu open close js code
-      let htmlcssArrow = document.querySelector(".htmlcss-arrow");
-      htmlcssArrow.onclick = function() {
+      let cadArrow = document.querySelector(".cad-arrow");
+      cadArrow.onclick = function() {
         navLinks.classList.toggle("show1");
       }
-      let moreArrow = document.querySelector(".more-arrow");
-      moreArrow.onclick = function() {
+      let lisArrow = document.querySelector(".lis-arrow");
+      lisArrow.onclick = function() {
         navLinks.classList.toggle("show2");
       }
-      let jsArrow = document.querySelector(".js-arrow");
-      jsArrow.onclick = function() {
+      let relArrow = document.querySelector(".rel-arrow");
+      relArrow.onclick = function() {
         navLinks.classList.toggle("show3");
       }
     </script>
+  </body>
+</html>

@@ -1,4 +1,3 @@
-/* Googlefont Poppins CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -10,6 +9,7 @@ nav{
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   height: 100px;
   background: #007bff;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -23,7 +23,7 @@ nav .navbar{
   align-items: center;
   justify-content: space-between;
   margin: auto;
-  padding: 0 30px;
+  padding: 0 50px;
 }
 .navbar .logo a{
   font-size: 30px;
@@ -31,25 +31,12 @@ nav .navbar{
   text-decoration: none;
   font-weight: 600;
 }
-.logo-name a{
-  text-decoration: none;
-  color: #fff;
-}
 nav .navbar .nav-links{
   line-height: 100px;
   height: 100%;
 }
 nav .navbar .links{
   display: flex;
-}
-.links li a{
-  transition: .5s;
-}
-.links li a:hover{
-  scale: 1.1;
-}
-.links li a:active{
-  scale: 1.1;
 }
 nav .navbar .links li{
   position: relative;
@@ -64,13 +51,15 @@ nav .navbar .links li a{
   text-decoration: none;
   white-space: nowrap;
   color: #fff;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 500;
 }
-.links li:hover .htmlcss-arrow,
-.links li:hover .js-arrow{
+
+.links li:hover .cad-arrow,
+.links li:hover .lis-arrow,
+.links li:hover .rel-arrow{
   transform: rotate(180deg);
-  }
+}
 
 nav .navbar .links li .arrow{
   height: 100%;
@@ -92,46 +81,63 @@ nav .navbar .links li .sub-menu{
   display: none;
   z-index: 2;
 }
-nav .navbar .links li:hover .htmlCss-sub-menu,
-nav .navbar .links li:hover .js-sub-menu{
+
+.links .sub-menu li a{
+  transition: .5s;
+}
+.links .sub-menu li a:hover{
+  scale: 1.1;
+}
+
+nav .navbar .links li:hover .cad-sub-menu,
+nav .navbar .links li:hover .lis-sub-menu,
+nav .navbar .links li:hover .rel-sub-menu{
   display: block;
 }
+
 .navbar .links li .sub-menu li{
   padding: 0 22px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
+
 .navbar .links li .sub-menu a{
   color: #fff;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 500;
 }
+
+.navbar .sair{
+  position: relative;
+  height: 40px;
+  width: 40px;
+}
+
+.navbar .sair i{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
 .navbar .nav-links .sidebar-logo{
   display: none;
 }
+
 .navbar .bx-menu{
   display: none;
 }
-@media (max-width:920px) {
-  nav .navbar{
-    max-width: 100%;
-    padding: 0 25px;
-  }
 
-  nav .navbar .logo a{
-    font-size: 27px;
-  }
-  nav .navbar .links li{
-    padding: 0 10px;
-    white-space: nowrap;
-  }
-  nav .navbar .links li a{
-    font-size: 15px;
-  }
-}
-@media (max-width:865px){
+@media (max-width:920px){
   .navbar .bx-menu{
     display: block;
   }
+
   nav .navbar .nav-links{
     position: fixed;
     top: 0;
@@ -146,85 +152,73 @@ nav .navbar .links li:hover .js-sub-menu{
     transition: all 0.5s ease;
     z-index: 1000;
   }
+
   .navbar .nav-links .sidebar-logo{
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   .sidebar-logo .logo-name{
     font-size: 25px;
     color: #fff;
   }
-    .sidebar-logo  i,
-    .navbar .bx-menu{
-      font-size: 25px;
-      color: #fff;
-    }
+
+  .sidebar-logo  i,
+  .navbar .bx-menu{
+    font-size: 25px;
+    color: #fff;
+  }
+
   nav .navbar .links{
     display: block;
     margin-top: 20px;
   }
+
   nav .navbar .links li .arrow{
     line-height: 40px;
   }
-nav .navbar .links li{
+
+  nav .navbar .links li{
     display: block;
   }
-nav .navbar .links li .sub-menu{
-  position: relative;
-  top: 0;
-  box-shadow: none;
-  display: none;
-}
-nav .navbar .links li .sub-menu li{
-  border-bottom: none;
+  nav .navbar .links li .sub-menu{
+    position: relative;
+    top: 0;
+    box-shadow: none;
+    display: none;
+  }
+  nav .navbar .links li .sub-menu li{
+    border-bottom: none;
+  }
 
-}
-  nav .navbar .links li:hover .htmlCss-sub-menu,
-  nav .navbar .links li:hover .js-sub-menu{
+  .links li:hover .cad-arrow,
+  .links li:hover .lis-arrow,
+  .links li:hover .rel-arrow{
+  transform: rotate(0deg);
+  }
+
+  nav .navbar .links li:hover .cad-sub-menu,
+  nav .navbar .links li:hover .lis-sub-menu,
+  nav .navbar .links li:hover .rel-sub-menu{
     display: none;
   }
-.navbar .nav-links.show1 .links .htmlCss-sub-menu,
-  .navbar .nav-links.show3 .links .js-sub-menu,
-  .navbar .nav-links.show2 .links .more .more-sub-menu{
+
+  .navbar .nav-links.show1 .links .cad-sub-menu,
+  .navbar .nav-links.show2 .links .lis-sub-menu,
+  .navbar .nav-links.show3 .links .rel-sub-menu{
       display: block;
-    }
-    .navbar .nav-links.show1 .links .htmlcss-arrow,
-    .navbar .nav-links.show3 .links .js-arrow{
-        transform: rotate(180deg);
-}
-    .navbar .nav-links.show2 .links .more-arrow{
-      transform: rotate(90deg);
-    }
-}
-@media (max-width:500px) {
-  .logo{
-    display: none;
+  }
+
+  .navbar .nav-links.show1 .links .cad-arrow,
+  .navbar .nav-links.show2 .links .lis-arrow,
+  .navbar .nav-links.show3 .links .rel-arrow{
+    transform: rotate(180deg);
   }
 }
+
 @media (max-width:370px){
   nav .navbar .nav-links{
-  max-width: 100%;
-} 
-}
-
-/*##### ESTILO DO BOTÃO DE SAIR #####*/
-.sair {
-  border-radius: 15px;
-  text-transform: uppercase;
-  color: #007bff;
-  font-size: 15px;
-  padding: 5px 0;
-  cursor: pointer;
-  font-weight: bold;
-  width: 130px;
-  background-color: #fff;
-  border: 1px solid transparent;
-  transition: .5s;
-}
-
-.sair:hover {
-  background-color: #007bff;
-  color: #fff;
-  border: 1px solid #fff;
+    max-width: 100%;
+  } 
 }

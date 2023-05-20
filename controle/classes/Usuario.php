@@ -18,7 +18,7 @@ class Usuario{
              //criar a sessão
             session_start();
             $_SESSION['nome']=$this->nome; 
-            header("Location:../view/bem_vindo.php");           
+            header("Location:../view/bem_vindo.php");
         }
 
         public function testaLogin(){

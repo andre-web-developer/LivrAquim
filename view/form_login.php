@@ -6,16 +6,7 @@
         <h1 class="title title-second">Login</h1>
         <?php
             if(isset($_GET['falha'])&&($_GET['falha']==true)) {
-                echo "  <a class='popup-modal' href='#test-modal'>Open modal</a>
-
-                        <div id='test-modal' class=mfp-hide white-popup-block'>
-                            <h1>Modal dialog</h1>
-                            <p>You won't be able to dismiss this by usual means (escape or
-                                click button), but you can close it programatically based on
-                                user choices or actions.</p>
-                            <p><a class='popup-modal-dismiss' href='#'>Dismiss</a></p>
-                        </div> ";
-                
+                echo "<p style='color: red;'>CPF ou senha incorretos, tente novamente.</p>";
             }
         ?>
         <form class="form" action="controle/login.php" method="POST">
@@ -32,20 +23,5 @@
             <input class="btn" type="submit" value="Enviar">
             
         </form>
-        <p class="forget-password"><a href="#">Esqueceu sua senha?</a></p>
     </div>
 </div>
-<script>
-    $(function () {
-        $('.popup-modal').magnificPopup({
-            type: 'inline',
-            preloader: false,
-            focus: '#username',
-            modal: true
-        });
-        $(document).on('click', '.popup-modal-dismiss', function (e) {
-            e.preventDefault();
-            $.magnificPopup.close();
-        });
-    });
-</script>

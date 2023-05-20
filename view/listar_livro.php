@@ -17,10 +17,10 @@
   </head>
   
   <body>
-    <div id="listarCentro">
+    <div id="listarCentroLivro">
       <div class="text-center my-4">
         <h2>Listagem de Livro</h2>
-        <p>Mostra os livros cadastrados com os que estão sem estoque no final.</p>
+        <p>Mostra os livros cadastrados em ordem decrescente de estoque.</p>
         <hr class="linha">
       </div>
       <table class="table table-striped">

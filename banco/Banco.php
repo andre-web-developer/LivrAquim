@@ -14,7 +14,7 @@ class Banco extends PDO{
 		if($this->conex->query($sql)){
 			return true;
 		}
-        else{
+		else{
 			return false;
 		}
 	}
@@ -26,7 +26,7 @@ class Banco extends PDO{
 		if($num_linhas==1){
 			return $resultado->fetch(PDO::FETCH_ASSOC);
 		}
-        elseif($num_linhas>1){
+		elseif($num_linhas>1){
 			return $resultado;
 		}
 		else{

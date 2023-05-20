@@ -137,7 +137,7 @@ input:-webkit-autofill {
     color: #007bff;
     border: 1px solid #007bff;
 }
-
+/* Funcionalidade de esquecer a senha fazer depois
 .forget-password {
     text-align: center;
     line-height: 25px;
@@ -153,7 +153,7 @@ input:-webkit-autofill {
     color: #007bff;
     font-size: 16px;
 }
-
+*/
 /*VERSÃO MOBILE*/
 @media screen and (max-width: 1040px) {
     .content {
@@ -218,7 +218,7 @@ input:-webkit-autofill {
     .description{
         font-size: 13px;
     }
-    .forget-password{
-        margin-bottom: 50px;
-    }
+    //.forget-password{
+    //    margin-bottom: 50px;
+    //}
 }

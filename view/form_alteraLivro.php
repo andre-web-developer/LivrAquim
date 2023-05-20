@@ -28,8 +28,18 @@
           $id_livro = $_GET['id_livro'];
           $livro = retornaLivro($id_livro);
         ?>
-          <form action="../controle/livro.php" method="POST">
-            <div class="form-group row text-center">
+          <form enctype="multipart/form-data" action="../controle/livro.php" method="POST">
+            <div class="form-group">
+              <div class="form-group">
+                <label><h6>Foto da capa:</h6></label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="fotolivro" name="foto">
+                    <label class="custom-file-label" for="customFile">Escolher arquivo</label>
+                </div>
+                <div class="text-center mt-4"  id="img">
+                    <img id="preview" width="150px" height="200px" src="<?php echo "../$livro[foto]";?>"> 
+                </div>
+              </div>
               <input type="hidden" name="id_livro" value="<?php echo $id_livro;?>">
               <label class="col-sm-3 col-form-label">ISBN:</label>
               <input type="text" class="form-control" name="isbn" value="<?php echo $livro['isbn']; ?>">
@@ -43,15 +53,6 @@
               <input type="number" class="form-control" name="precovenda" value="<?php echo $livro['precovenda']; ?>">
               <label class="col-sm-3 col-form-label">Preço de custo:</label>
               <input type="number" class="form-control" name="precocompra" value="<?php echo $livro['precocompra']; ?>">
-              <!--### Pensar em como exibir e alterar as coisas que tem foring key ###
-                  to puchando:
-                  isbn
-                  titulo
-                  ano
-                  quantidade
-                  precovenda
-                  precocompra
-              -->
               
               <input type="submit" name="Enviar" class="btn btn-primary">
             </div>

@@ -38,12 +38,12 @@ require("cabecalho.php");
       <div>
         <?php
           if (isset($_POST['dia'])) {
-                require('../controle/relatorio.php');
-                echo "<div class='text-center mt-4 mb-4'><h2>Relatório do dia $_POST[dia]</h2></div>";
-              }
+            require('../controle/relatorio.php');
+            echo "<div class='text-center mt-4 mb-4'><h2>Relatório do dia $_POST[dia]</h2></div>";
+          }
         ?>
         <table class="table table-striped">
-          <thead>
+          <thead class="table-primary">
             <tr>
               <th scope="col">#</th>
               <th scope="col">Data</th>

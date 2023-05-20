@@ -99,7 +99,7 @@ require_once  ("classes/Livro.php");
     }   
     
     function retornaLivro($id_livro){
-        $editora = new Livro();
-        return $editora->getLivro($id_livro);
+        $livro = new Livro();
+        return $livro->getLivro($id_livro);
     }
 ?>

@@ -50,7 +50,7 @@ require("cabecalho.php");
                 }
           ?>
         <table class="table table-striped">
-          <thead>
+          <thead class="table-primary">
             <tr>
               <th scope="col">#</th>
               <th scope="col">Data</th>

@@ -2,7 +2,8 @@
 <html lang="pt" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../cabecalho.css">
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/cabecalho.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
@@ -22,10 +23,10 @@
               <a href="#">CADASTRAR</a>
               <i class='bx bxs-chevron-down cad-arrow arrow  '></i>
               <ul class="cad-sub-menu sub-menu">
-                <li><a href="form_livro">Livro</a></li>
-                <li><a href="form_tema">Tema</a></li>
-                <li><a href="form_autor">Autor</a></li>
-                <li><a href="form_editora">Editora</a></li>
+                <li><a href="form_livro.php">Livro</a></li>
+                <li><a href="form_tema.php">Tema</a></li>
+                <li><a href="form_autor.php">Autor</a></li>
+                <li><a href="form_editora.php">Editora</a></li>
                 
               </ul>
             </li>
@@ -34,10 +35,10 @@
               <a href="#">LISTAR</a>
               <i class='bx bxs-chevron-down lis-arrow arrow '></i>
               <ul class="lis-sub-menu sub-menu">
-                <li><a href="listar_livro">Livro</a></li>
-                <li><a href="listar_tema">Tema</a></li>
-                <li><a href="listar_autor">Autor</a></li>
-                <li><a href="listar_editora">Editora</a></li>
+                <li><a href="listar_livro.php">Livro</a></li>
+                <li><a href="listar_tema.php">Tema</a></li>
+                <li><a href="listar_autor.php">Autor</a></li>
+                <li><a href="listar_editora.php">Editora</a></li>
               </ul>
             </li>
             <li>
@@ -49,10 +50,11 @@
                 <li><a href="form_relatAnual.php">Anual</a></li>
               </ul>
             </li>
+
+            <li>
+              <a href="../controle/login.php?sair=true">SAIR<i class='bx bx-log-out'></i></a>
+            </li>
           </ul>
-        </div>
-        <div class="sair">
-          <a href="../controle/login.php?sair=true"><i class='bx bx-log-out'></i></a>
         </div>
       </div>
     </nav>

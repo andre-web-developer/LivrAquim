@@ -12,8 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/listar.css">
-    <link rel="stylesheet" href="../css/linha.css">
+    <link rel="stylesheet" href="../css/global.css">
     <title>Confirmação da venda</title>
 </head>
 <body>
@@ -35,7 +34,12 @@
                 <h2>Metodo de pagamento:</h2>
                 <p>Selecione o metodo de pagamento desejado</p>
                 <?php
-                    echo "<h5>Preço total da compra: R$$_SESSION[precoprevio]</h5>";
+                    if ($_SESSION['precoprevio']>200) {
+                        echo "  <h5>Preço total da compra: R$$_SESSION[precoprevio]</h5>
+                                <p>Com desconto de 5% para compras acima de R$200</p>";
+                    } else {
+                        echo "<h5>Preço total da compra: R$$_SESSION[precoprevio]</h5>";
+                    }
                 ?>
             </div>
             

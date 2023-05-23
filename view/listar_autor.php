@@ -10,23 +10,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/listar.css">
-    <link rel="stylesheet" href="../css/linha.css">
-    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/global.css">
     <title>Listagem de Autores</title>
   </head>
   
   <body>
     <div id="listarCentro">
       <div class="text-center my-4">
-        <h2>Listagem de Livro</h2>
-        <p>Mostra os livros cadastrados com os que estão sem estoque no final.</p>
+        <h2>Listagem de Autor</h2>
+        <p>Mostra os autores cadastrados em ordem alfabética.</p>
         <hr class="linha">
       </div>  
       <table class="table table-striped">
-        <thead class="table-primary">
+        <thead class="table-primary text-center">
           <tr>
-            <th scope="col">#</th>
             <th scope="col">Autor</th>
             <th scope="col">Alterar</th>
             <th scope="col">Excluir</th>

@@ -16,12 +16,10 @@
 <body>
 <div id="principal">
     <h2> Cadastro de Autor <h2>
-        <form action="../controle/autor.php" method="POST">
-            <label>Nome:</label>
-            <input type="text" name="nome">
-            <input type="submit" name="Enviar">
-
-            
-    
+    <form action="../controle/autor.php" method="POST">
+        <label>Nome:</label>
+        <input type="text" name="nome">
+        <input type="submit" name="Enviar">
+    </form>
 </body>
 </html>

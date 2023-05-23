@@ -10,8 +10,7 @@ require("cabecalho.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/listar.css">
-    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/global.css">
     <title>Relatório Diário</title>
   </head>
   
@@ -28,7 +27,6 @@ require("cabecalho.php");
               <select name="ano" class="custom-select mr-sm-2">
                   <?php
                     for ($i=date('Y'); $i >= 2018; $i--) { 
-                      $ano = date('Y')-$i;
                       echo "<option value='$i'>$i</option>";
                     }
                   ?>
@@ -52,7 +50,6 @@ require("cabecalho.php");
         <table class="table table-striped">
           <thead class="table-primary">
             <tr>
-              <th scope="col">#</th>
               <th scope="col">Data</th>
               <th scope="col">Valor Total</th>
               <th scope="col">Forma de pagamento</th>

@@ -1,13 +1,28 @@
+#listarCentro{
+  width: 50%;
+  margin: 0 auto;
+}
+
+#listarCentroLivro{
+  width: 90%;
+  margin: 0 auto;
+}
+
 .linha{
   width: 20%;
   margin: 0 auto;
   border: 2px solid black;
   border-radius: 10px;
 }
+
 .linha2{
   width: 100%;
   margin: 0 auto;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   margin-bottom: 2em;
+}
+
+#img{
+  display: none;
 }

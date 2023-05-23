@@ -8,7 +8,6 @@ CREATE TABLE usuario(
 id_usuario INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
 cpf VARCHAR(255),
 nome VARCHAR(255),
-login VARCHAR(255),
 senha VARCHAR(255));
 
 CREATE TABLE editora(
@@ -62,7 +61,8 @@ valorunitario DECIMAL(10,2),
 FOREIGN KEY(id_venda) REFERENCES venda(id_venda),
 FOREIGN KEY(id_livro) REFERENCES livro(id_livro));
 
-INSERT INTO usuario(cpf,nome,login,senha) VALUES("12345678","Gestor","admin","1234");
+INSERT INTO usuario(cpf,nome,senha) VALUES("11111111111","Administrador","123");
+INSERT INTO usuario(cpf,nome,senha) VALUES ("22222222222","Joaquim","123");
 
 INSERT INTO editora(nome,cnpj,telefone) VALUES("Novatec","5263969","(42)3231-9652");
 INSERT INTO editora(nome,cnpj,telefone) VALUES("Senac","41412525","(42)3231-8888");

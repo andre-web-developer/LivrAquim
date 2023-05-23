@@ -9,12 +9,31 @@
       $this->banco = new Banco();
     }
 
-    public function listarAutor(){
+    public function cadastrar($nome){
+      $sql = "INSERT INTO autor(nome) VALUES('$nome')";
+      $banco = new Banco();
+      $resultado = $this->banco->executar($sql);
+      if($resultado){
+        header("Location:../view/sucesso.php?pagina=autor&funcao=Cadastro");
+      }
+      else{
+        header("Location:../view/falha.php?pagina=autor&funcao=Cadastro");
+      }
+    }
+      
+    public function mostrar(){
       $sql = "select*from autor";
       $resultado = $this->banco->consultar($sql);
       while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
-        echo "<tr>
-                <th scope='row'>$linha[id_autor]</th>
+        echo "<option value=$linha[id_autor]>$linha[nome]</option>";
+      }
+    }
+
+    public function listarAutor(){
+      $sql = "SELECT*FROM autor ORDER BY nome";
+      $resultado = $this->banco->consultar($sql);
+      while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
+        echo "<tr class='text-center'>
                 <td>$linha[nome]</td>
                 <td><a href='../controle/autor.php?id_autor=$linha[id_autor]&op=a'><button class='btn btn-warning'>Alterar</button></a></td>
                 <td><a href='../controle/autor.php?id_autor=$linha[id_autor]&op=d'><button class='btn btn-danger'>Excluir</button></a></td>
@@ -24,12 +43,12 @@
 
     public function deletaAutor($id_autor){
       $sql = "DELETE FROM autor WHERE id_autor=$id_autor";
-      $resultado = $this->banco->executar($sql);
+      $resultado = $this->banco->deletar($sql);
       if ($resultado) {
         header("Location:../view/listar_autor.php");
       }
       else{
-        header("Location:../view/falha_exclusao.php?pagina=autor");
+        header("Location:../view/falha.php?pagina=autor&funcao=Listagem");
       }
     }
 
@@ -46,7 +65,7 @@
           header("Location:../view/listar_autor.php");
         }
         else{
-          header("Location:../view/falha_atualizar.php?pagina=autor");
+          header("Location:../view/falha.php?pagina=autor&funcao=Atualização");
         }
     }
   }

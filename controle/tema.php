@@ -8,34 +8,25 @@
 
         $objeto = new Tema();
         $objeto->atualizaTema($id_tema,$tema);
-    }
-
-    if((isset($_POST['tema']))&&(!isset($_POST['id_tema']))){
+    }elseif((isset($_POST['tema']))&&(!isset($_POST['id_tema']))){
         $tema = $_POST['tema'];
-        $banco = new Banco();
-        $sql = "INSERT INTO tema(tema) VALUES('$tema')";
-        $resultado = $banco->executar($sql);
-        if($resultado){
-            header("Location:../view/sucessocadastro.php?pagina=tema");
 
-        }
-        else{
-            header("Location:../view/falhacadastro.php?pagina=tema");
-        }
+        $objeto = new Tema();
+        $objeto->cadastrar($tema);
     }
 
     function listar(){
-        $tema = new Tema();
-        $tema->listarTemas();
+        $objeto = new Tema();
+        $objeto->listarTemas();
     }
 
     if(isset($_GET['id_tema'])){
         $id_tema = $_GET['id_tema'];
-        $tema = new Tema();
+        $objeto = new Tema();
         if (isset($_GET['op'])) {
             switch ($_GET['op']) {
                 case 'd':
-                    $tema->deletaTema($id_tema);
+                    $objeto->deletaTema($id_tema);
                 break;
                 
                 case 'a':
@@ -46,8 +37,7 @@
     }
 
     function retornaTema($id_tema){
-        $tema = new Tema();
-        return $tema->getTema($id_tema);
+        $objeto = new Tema();
+        return $objeto->getTema($id_tema);
     }
-
 ?>

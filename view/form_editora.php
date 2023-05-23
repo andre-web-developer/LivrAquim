@@ -11,7 +11,6 @@ require("cabecalho.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
     <title>Cadastrar Editora</title>
 </head>
 <body>
@@ -20,11 +19,9 @@ require("cabecalho.php");
         <form action="../controle/editora.php" method="POST">
             <label>Nome:</label>
             <input type="text" name="nome">
-            
 
             <label>CNPJ:</label>
             <input type="text" name="cnpj">
-           
 
             <label>Telefone:</label>
             <input type="text" name="telefone">

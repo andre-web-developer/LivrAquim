@@ -6,7 +6,7 @@ class Banco extends PDO{
     public $conex;
 
     public function __construct(){
-        $this->conex = new PDO('mysql:host=localhost;dbname=livraria',"root","",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+			$this->conex = new PDO('mysql:host=localhost;dbname=livraria',"root","",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
     }
 
     public function executar($sql){
@@ -36,6 +36,17 @@ class Banco extends PDO{
 
 	public function ultimoId(){
 		return $this->conex->lastInsertId();
+	}
+
+	public function deletar($sql){
+		try{
+			//tenta executar a SQL e catch fica esperando pelo erro
+			$resultado=$this->conex->query($sql);
+			return true;
+		} catch (PDOException $e) {
+			echo "Erro ao excluir o registro: " . $e->getMessage();
+			return false;
+		}
 	}
 }
 ?>

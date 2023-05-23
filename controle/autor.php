@@ -1,5 +1,4 @@
 <?php
-    require_once ("../banco/Banco.php");
     require_once ("classes/Autor.php"); 
 
     if (isset($_POST['id_autor'])) {
@@ -8,23 +7,12 @@
 
         $objeto = new Autor();
         $objeto->atualizaAutor($id_autor,$autor);
-    }
-
-    if((isset($_POST['nome'])&&(!isset($_POST['id_autor'])))){
+    }elseif((isset($_POST['nome'])&&(!isset($_POST['id_autor'])))){
         $nome = $_POST['nome'];
-        $banco = new Banco();
         
-        $sql = "INSERT INTO autor(nome) VALUES('$nome')";
-        
-        if($banco->executar($sql)){
-            header("Location:../view/listar_autor.php");
-        
-        }
-        else{
-            header("Location:../view/falhacadastro.php?pagina=autor");
-        }
+        $objeto = new Autor();
+        $objeto->cadastrar($nome);
     }
-
 
     function listar(){
         $autor = new Autor();

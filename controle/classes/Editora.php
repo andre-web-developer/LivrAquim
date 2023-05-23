@@ -10,13 +10,31 @@
     public function __construct(){
       $this->banco = new Banco();
     }
+    public function cadastrar($nome,$cnpj,$telefone){
+      $sql = "INSERT INTO editora(nome,cnpj,telefone) VALUES('$nome','$cnpj','$telefone')";
+      $resultado = $this->banco->executar($sql);
+      if($resultado){
+          header("Location:../view/sucesso.php?pagina=editora&funcao=Cadastro");
+      
+      }
+      else{
+          header("Location:../view/falha.php?pagina=editora&funcao=Cadastro");
+      }
+    }
 
-    public function listarEditora(){
+    public function mostrar(){
       $sql = "select*from editora";
       $resultado = $this->banco->consultar($sql);
       while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
-        echo "<tr>
-                <th scope='row'>$linha[id_editora]</th>
+        echo "<option value=$linha[id_editora]>$linha[nome]</option>";
+      }
+    }
+
+    public function listarEditora(){
+      $sql = "SELECT*FROM editora ORDER BY nome";
+      $resultado = $this->banco->consultar($sql);
+      while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
+        echo "<tr class='text-center'>
                 <td>$linha[nome]</td>
                 <td>$linha[cnpj]</td>
                 <td>$linha[telefone]</td>
@@ -32,7 +50,7 @@
         header("Location:../view/listar_editora.php");
       }
       else{
-        header("Location:../view/falha_exclusao.php?pagina=editora");
+        header("Location:../view/falha.php?pagina=editora&funcao=Exclusão");
       }
     }
 
@@ -49,7 +67,7 @@
           header("Location:../view/listar_editora.php");
         }
         else{
-          header("Location:../view/falha_atualizar.php?pagina=editora");
+          header("Location:../view/falha.php?pagina=editora&funcao=Atualização");
         }
     }
   }

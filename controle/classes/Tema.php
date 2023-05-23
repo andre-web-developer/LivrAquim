@@ -9,15 +9,30 @@
       $this->banco = new Banco();
     }
 
-    public function listarTemas(){
+    public function cadastrar($tema){
+      $sql = "INSERT INTO tema(tema) VALUES('$tema')";
+      $resultado = $this->banco->executar($sql);
+      if($resultado){
+        header("Location:../view/sucesso.php?pagina=tema&funcao=Cadastro");
+      }
+      else{
+        header("Location:../view/falha.php?pagina=tema&funcao=Cadastro");
+      }
+    }
+
+    public function mostrar(){
       $sql = "select*from tema";
       $resultado = $this->banco->consultar($sql);
-
-
-      $deletaButton = "Deletar";
       while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
-        echo "<tr>
-                <th scope='row'>$linha[id_tema]</th>
+        echo "<option value=$linha[id_tema]>$linha[tema]</option>";
+      }
+    }
+
+    public function listarTemas(){
+      $sql = "SELECT*FROM tema ORDER BY tema";
+      $resultado = $this->banco->consultar($sql);
+      while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
+        echo "<tr class='text-center'>
                 <td>$linha[tema]</td>
                 <td><a href='../controle/tema.php?id_tema=$linha[id_tema]&op=a'><button type='button' class='btn btn-warning'>Alterar</button></a></td>
                 <td><a href='../controle/tema.php?id_tema=$linha[id_tema]&op=d'><button type='button' class='btn btn-danger'>Excluir</button></a></td>
@@ -27,13 +42,12 @@
 
     public function deletaTema($id_tema){
       $sql = "DELETE FROM tema WHERE id_tema=$id_tema";
-      $resultado = $this->banco->executar($sql);
+      $resultado = $this->banco->deletar($sql);
       if ($resultado) {
         header("Location:../view/listar_tema.php");
-
       }
       else{
-        header("Location:../view/falha_exclusao.php?pagina=tema");
+        header("Location:../view/falha.php?pagina=tema&funcao=Exclusão");
       }
     }
   
@@ -50,7 +64,7 @@
           header("Location:../view/listar_tema.php");
         }
         else{
-          header("Location:../view/falha_atualizar.php?pagina=tema");
+          header("Location:../view/falha.php?pagina=tema&funcao=Atualização");
         }
     }
   }

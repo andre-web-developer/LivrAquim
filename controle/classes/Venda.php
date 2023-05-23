@@ -8,7 +8,11 @@
     }
 
     public function livrosVenda(){
-      $sql = "select*from livro WHERE quantidade>0";
+      $sql = "SELECT livro.*, editora.nome AS editora,tema.tema,autor.nome FROM livro,editora,tema,autor WHERE    
+              livro.id_editora = editora.id_editora AND
+              livro.id_autor = autor.id_autor AND
+              livro.id_tema = tema.id_tema AND
+              quantidade>0";
       $resultado = $this->banco->consultar($sql);
       while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
         echo" <hr class='linha2'>   
@@ -18,10 +22,38 @@
                 </div>
                 
                 <div class='col-sm-8'>
-                  <div class='row m-0 mb-3 text-center'>
+                  <div class='row m-0 mb-3'>
                     <label for='staticTitilo' class='col-form-label'><h6>Título:</h6></label>
                     <div class='col-sm-9'>
-                      <input type='text' readonly class='text-center form-control-plaintext' id='staticTitilo' value='$linha[titulo]'>
+                      <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$linha[titulo]'>
+                    </div>
+                  </div>
+
+                  <div class='row m-0 mb-3'>
+                    <label for='staticTitilo' class='col-form-label'><h6>Ano:</h6></label>
+                    <div class='col-sm-9'>
+                      <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$linha[ano]'>
+                    </div>
+                  </div>
+                  
+                  <div class='row m-0 mb-3'>
+                    <label for='staticTitilo' class='col-form-label'><h6>Autor:</h6></label>
+                    <div class='col-sm-9'>
+                      <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$linha[nome]'>
+                    </div>
+                  </div>
+                  
+                  <div class='row m-0 mb-3'>
+                    <label for='staticTitilo' class='col-form-label'><h6>Editora:</h6></label>
+                    <div class='col-sm-9'>
+                      <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$linha[editora]'>
+                    </div>
+                  </div>
+
+                  <div class='row m-0 mb-3'>
+                    <label for='staticTitilo' class='col-form-label'><h6>Tema:</h6></label>
+                    <div class='col-sm-9'>
+                      <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$linha[tema]'>
                     </div>
                   </div>
               
@@ -61,7 +93,11 @@
     public function livrosConfirmaVenda(){
       $livros = $_SESSION['livroscomprados'];
       foreach($livros as $id_livro => $quantidade) {
-        $sql = "select*from livro where id_livro='$id_livro'";
+        $sql = "SELECT livro.*, editora.nome AS editora,tema.tema,autor.nome FROM livro,editora,tema,autor WHERE    
+                livro.id_editora = editora.id_editora AND
+                livro.id_autor = autor.id_autor AND
+                livro.id_tema = tema.id_tema AND
+                id_livro='$id_livro'";
         $resultado = $this->banco->consultar($sql);
         $subtotal = $quantidade*$resultado['precovenda'];
 
@@ -76,6 +112,34 @@
                       <label for='staticTitilo' class='col-form-label'><h6>Título:</h6></label>
                       <div class='col-sm-10 mb-4'>
                         <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$resultado[titulo]'>
+                      </div>
+                    </div>
+
+                    <div class='row m-0'>
+                      <label for='staticTitilo' class='col-form-label'><h6>Ano:</h6></label>
+                      <div class='col-sm-10 mb-4'>
+                        <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$resultado[ano]'>
+                      </div>
+                    </div>
+                    
+                    <div class='row m-0'>
+                      <label for='staticTitilo' class='col-form-label'><h6>Autor:</h6></label>
+                      <div class='col-sm-10 mb-4'>
+                        <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$resultado[nome]'>
+                      </div>
+                    </div>
+
+                    <div class='row m-0'>
+                      <label for='staticTitilo' class='col-form-label'><h6>Editora:</h6></label>
+                      <div class='col-sm-10 mb-4'>
+                        <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$resultado[editora]'>
+                      </div>
+                    </div>
+
+                    <div class='row m-0'>
+                      <label for='staticTitilo' class='col-form-label'><h6>Tema:</h6></label>
+                      <div class='col-sm-10 mb-4'>
+                        <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$resultado[tema]'>
                       </div>
                     </div>
 

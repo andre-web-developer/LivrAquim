@@ -42,7 +42,7 @@
         <tbody>
           <?php
             require("../controle/livro.php");
-            listar();
+              listar();
             ?>
         </tbody>
       </table>

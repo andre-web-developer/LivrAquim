@@ -7,11 +7,6 @@
 
         $objeto = new Autor();
         $objeto->atualizaAutor($id_autor,$autor);
-    }elseif((isset($_POST['nome'])&&(!isset($_POST['id_autor'])))){
-        $nome = $_POST['nome'];
-        
-        $objeto = new Autor();
-        $objeto->cadastrar($nome);
     }
 
     function listar(){

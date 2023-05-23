@@ -8,11 +8,6 @@
 
         $objeto = new Tema();
         $objeto->atualizaTema($id_tema,$tema);
-    }elseif((isset($_POST['tema']))&&(!isset($_POST['id_tema']))){
-        $tema = $_POST['tema'];
-
-        $objeto = new Tema();
-        $objeto->cadastrar($tema);
     }
 
     function listar(){

@@ -34,12 +34,7 @@
                 <h2>Metodo de pagamento:</h2>
                 <p>Selecione o metodo de pagamento desejado</p>
                 <?php
-                    if ($_SESSION['precoprevio']>200) {
-                        echo "  <h5>Preço total da compra: R$$_SESSION[precoprevio]</h5>
-                                <p>Com desconto de 5% para compras acima de R$200</p>";
-                    } else {
-                        echo "<h5>Preço total da compra: R$$_SESSION[precoprevio]</h5>";
-                    }
+                    echo "<h5>Preço total da compra com desconto de 5% calculado:</h5> <h4>R$$_SESSION[precoprevio]</h4>";
                 ?>
             </div>
             

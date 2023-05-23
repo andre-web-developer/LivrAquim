@@ -11,13 +11,12 @@
 
     public function cadastrar($tema){
       $sql = "INSERT INTO tema(tema) VALUES('$tema')";
-      $resultado = $this->banco->executar($sql);
-      if($resultado){
-        header("Location:../view/sucesso.php?pagina=tema&funcao=Cadastro");
-      }
-      else{
-        header("Location:../view/falha.php?pagina=tema&funcao=Cadastro");
-      }
+      $this->banco->executar($sql);
+      
+      $sql = "SELECT * FROM tema WHERE tema='$tema'";
+      $resultado = $this->banco->consultar($sql);
+      $id_tema = $resultado['id_tema'];
+      return $id_tema;
     }
 
     public function mostrar(){

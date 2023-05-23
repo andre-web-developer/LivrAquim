@@ -21,6 +21,7 @@
         <div class="text-center mt-4 mb-4">
             <h2>Cadastro de Livro</h2>
             <p>Prencha os todos os dados do formulário para poder efetuar o cadastro corretamente.</p>
+            <h4>Caso seu autor, editora ou tema não esteja entre as opções, selecione "cadastrar novo" e preencha as informações necessárias</h4>
             <hr class="linha">
         </div>
         
@@ -58,13 +59,16 @@
             <div class="form-row">
                 <div class="form-group col-md-7">
                     <label><h6>Autor:</h6></label>
-                    <select required class="form-control" name="id_autor">
+                    <select required class="form-control" name="id_autor" id="select-autor">
                         <option selected>Escolher...</option>
-                        <option value="">Cadastrar novo autor</option>
+                        <option value="novo-autor">Cadastrar novo</option>
                         <?php
                             mostrarAutor();
                         ?>
                     </select>
+                    <div id="campo-novo-autor" style="display: none;">
+                        <input type="text" name="novo_autor" placeholder="Nome do novo autor" class="form-control">
+                    </div>
                 </div>
 
                 <div class="form-group col-md-5">
@@ -82,24 +86,32 @@
             <div class="form-row">
                 <div class="form-group col-md-5">
                     <label><h6>Editora:</h6></label>
-                    <select required class="form-control" name="id_editora">
+                    <select required class="form-control" name="id_editora" id="select-editora">
                         <option selected>Escolher...</option>
-                        <option value="">Cadastrar nova editora</option>
+                        <option value="nova-editora">Cadastrar nova</option>
                         <?php
                             mostrarEditoras();
                         ?>
                     </select>
+                    <div id="campo-nova-editora" style="display: none;">
+                        <input type="text" name="nova_editora" placeholder="Nome da nova editora" class="form-control">
+                        <input type="text" name="cnpj" placeholder="CNPJ da nova editora" class="form-control">
+                        <input type="text" name="telefone" placeholder="Telefone da nova editora" class="form-control">
+                    </div>
                 </div>
 
                 <div class="form-group col-md-7">
                     <label><h6>Tema:</h6></label>
-                    <select required class="form-control" name="id_tema">
+                    <select required class="form-control" name="id_tema" id="select-tema">
                         <option selected>Escolher...</option>
-                        <option value="">Cadastrar novo tema</option>
+                        <option value="novo-tema">Cadastrar novo</option>
                         <?php
                             mostrarTemas();
                         ?>
                     </select>
+                    <div id="campo-novo-tema" style="display: none;">
+                        <input type="text" name="novo_tema" placeholder="Nome do novo tema" class="form-control">
+                    </div>
                 </div>
             </div>
                 
@@ -132,7 +144,7 @@
     <script type="text/javascript">
         function readImage(){
         if (this.files && this.files[0]){
-            var file = new FileReader();
+            let file = new FileReader();
             file.onload = function(e) {
             document.getElementById("preview").src = e.target.result;
             };       
@@ -142,6 +154,37 @@
         }
 
         document.getElementById("fotolivro").addEventListener("change", readImage, false);
+
+        //cadastrando em multiplas tabelas com o mesmo form
+        var selectAutor = document.getElementById("select-autor");
+        var campoNovoAutor = document.getElementById("campo-novo-autor");
+        selectAutor.addEventListener("change", function() {
+            if (selectAutor.value === "novo-autor") {
+                campoNovoAutor.style.display = "block";
+            } else {
+                campoNovoAutor.style.display = "none";
+            }
+        });
+
+        var selectTema = document.getElementById("select-tema");
+        var campoNovoTema = document.getElementById("campo-novo-tema");
+        selectTema.addEventListener("change", function() {
+            if (selectTema.value === "novo-tema") {
+                campoNovoTema.style.display = "block";
+            } else {
+                campoNovoTema.style.display = "none";
+            }
+        });
+
+        var selectEditora = document.getElementById("select-editora");
+        var campoNovaEditora = document.getElementById("campo-nova-editora");
+        selectEditora.addEventListener("change", function() {
+            if (selectEditora.value === "nova-editora") {
+                campoNovaEditora.style.display = "block";
+            } else {
+                campoNovaEditora.style.display = "none";
+            }
+        });
     </script>
 </body>
 </html>

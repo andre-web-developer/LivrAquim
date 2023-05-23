@@ -19,26 +19,19 @@
             <i class='bx bx-x'></i>
           </div>
           <ul class="links">
-            <li>
-              <a href="#">CADASTRAR</a>
-              <i class='bx bxs-chevron-down cad-arrow arrow  '></i>
-              <ul class="cad-sub-menu sub-menu">
-                <li><a href="form_livro.php">Livro</a></li>
-                <li><a href="form_tema.php">Tema</a></li>
-                <li><a href="form_autor.php">Autor</a></li>
-                <li><a href="form_editora.php">Editora</a></li>
-                
-              </ul>
-            </li>
+
+            <li><a href="form_livro.php">CADASTRAR</a></li>
+
             <li><a href="form_venda.php">VENDAS</a></li>
+
             <li>
               <a href="#">LISTAR</a>
               <i class='bx bxs-chevron-down lis-arrow arrow '></i>
               <ul class="lis-sub-menu sub-menu">
                 <li><a href="listar_livro.php">Livro</a></li>
-                <li><a href="listar_tema.php">Tema</a></li>
                 <li><a href="listar_autor.php">Autor</a></li>
                 <li><a href="listar_editora.php">Editora</a></li>
+                <li><a href="listar_tema.php">Tema</a></li>
               </ul>
             </li>
             <li>
@@ -60,7 +53,7 @@
     </nav>
 
     <script>
-      // sidebar open close js code
+      // Abrir e fechar o menu mobile
       let navLinks = document.querySelector(".nav-links");
       let menuOpenBtn = document.querySelector(".navbar .bx-menu");
       let menuCloseBtn = document.querySelector(".nav-links .bx-x");
@@ -72,11 +65,7 @@
       }
 
 
-      // sidebar submenu open close js code
-      let cadArrow = document.querySelector(".cad-arrow");
-      cadArrow.onclick = function() {
-        navLinks.classList.toggle("show1");
-      }
+      // abrir e fechar os sub-menus do mobile
       let lisArrow = document.querySelector(".lis-arrow");
       lisArrow.onclick = function() {
         navLinks.classList.toggle("show2");

@@ -24,6 +24,8 @@ class Banco extends PDO{
 		$resultado=$this->conex->query($sql);
 		$num_linhas=$resultado->rowCount();
 		if($num_linhas==1){
+			//perguntar como isso funciona e PQ
+			//Talvez mysqli seja melhor
 			return $resultado->fetch(PDO::FETCH_ASSOC);
 		}
 		elseif($num_linhas>1){
@@ -43,8 +45,7 @@ class Banco extends PDO{
 			//tenta executar a SQL e catch fica esperando pelo erro
 			$resultado=$this->conex->query($sql);
 			return true;
-		} catch (PDOException $e) {
-			echo "Erro ao excluir o registro: " . $e->getMessage();
+		} catch (PDOException) {
 			return false;
 		}
 	}

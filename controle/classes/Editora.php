@@ -12,14 +12,12 @@
     }
     public function cadastrar($nome,$cnpj,$telefone){
       $sql = "INSERT INTO editora(nome,cnpj,telefone) VALUES('$nome','$cnpj','$telefone')";
-      $resultado = $this->banco->executar($sql);
-      if($resultado){
-          header("Location:../view/sucesso.php?pagina=editora&funcao=Cadastro");
+      $this->banco->executar($sql);
       
-      }
-      else{
-          header("Location:../view/falha.php?pagina=editora&funcao=Cadastro");
-      }
+      $sql = "SELECT * FROM editora WHERE nome='$nome'";
+      $resultado = $this->banco->consultar($sql);
+      $id_editora = $resultado['id_editora'];
+      return $id_editora;
     }
 
     public function mostrar(){
@@ -45,7 +43,7 @@
     }
     public function deletaEditora($id_editora){
       $sql = "DELETE FROM editora WHERE id_editora=$id_editora";
-      $resultado = $this->banco->executar($sql);
+      $resultado = $this->banco->deletar($sql);
       if ($resultado) {
         header("Location:../view/listar_editora.php");
       }

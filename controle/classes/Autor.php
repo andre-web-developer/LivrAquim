@@ -11,14 +11,12 @@
 
     public function cadastrar($nome){
       $sql = "INSERT INTO autor(nome) VALUES('$nome')";
-      $banco = new Banco();
-      $resultado = $this->banco->executar($sql);
-      if($resultado){
-        header("Location:../view/sucesso.php?pagina=autor&funcao=Cadastro");
-      }
-      else{
-        header("Location:../view/falha.php?pagina=autor&funcao=Cadastro");
-      }
+      $this->banco->executar($sql);
+
+      $sql = "SELECT * FROM autor WHERE nome='$nome'";
+      $resultado = $this->banco->consultar($sql);
+      $id_autor = $resultado['id_autor'];
+      return $id_autor;
     }
       
     public function mostrar(){

@@ -10,13 +10,6 @@
 
         $objeto = new Editora();
         $objeto->atualizaEditora($id_editora,$editora,$cnpj,$telefone);
-    }elseif((isset($_POST['nome']))&&(!isset($_POST['id_editora']))){
-        $nome = $_POST['nome'];
-        $cnpj = $_POST['cnpj'];
-        $telefone = $_POST['telefone'];
-
-        $objeto = new Editora();
-        $objeto->cadastrar($nome,$cnpj,$telefone);
     }
 
     function listar(){

@@ -15,9 +15,9 @@
 
       $resultado = $this->banco->consultar($sql);
       if ($resultado!=false) {
-        $somatotal=0;
+        $totalvendido=0;
         while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
-          $somatotal = $somatotal + $linha['valortotal'];
+          $totalvendido = $totalvendido + $linha['valortotal'];
           echo "<tr>";
           echo "<td>$linha[data]</td>";
           echo "<td>$linha[valortotal]</td>";
@@ -25,7 +25,7 @@
           echo "</tr>";
         }
           echo "<tr>
-                  <td class='table-dark' colspan='10'>Total vendido no mes foi de R$$somatotal</td>
+                  <td class='table-dark' colspan='10'>Total vendido no mes foi de R$$totalvendido</td>
                 </tr>";
       } else {
         echo "<h3 style='color: red; text-align: center;'>Não existem dados nessa tabela.</h3>";
@@ -40,9 +40,9 @@
       $resultado = $this->banco->consultar($sql);
       
       if ($resultado!=false) {
-        $somatotal = 0;
+        $totalvendido = 0;
         while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
-          $somatotal = $somatotal + $linha['valortotal'];
+          $totalvendido = $totalvendido + $linha['valortotal'];
           echo "<tr>";
           echo "<td>$linha[data]</td>";
           echo "<td>$linha[valortotal]</td>";
@@ -50,7 +50,7 @@
           echo "</tr>";
         }
         echo "<tr>
-                  <td class='table-dark' colspan='10'>Total vendido no dia for de R$$somatotal</td>
+                  <td class='table-dark' colspan='10'>Total vendido no dia for de R$$totalvendido</td>
                 </tr>";    
       } else {
         echo "<h3 style='color: red; text-align: center;'>Não existem dados nessa tabela.</h3>";
@@ -63,19 +63,20 @@
           YEAR(data)='$ano' ";
       $resultado = $this->banco->consultar($sql);
       
-      if ($resultado!=false) {
-        $somatotal = 0;
+      if ($resultado!=false){
+        $totalvendido = 0;
         while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
-          $somatotal = $somatotal + $linha['valortotal'];
+          $totalvendido = $totalvendido + $linha['valortotal'];
           echo "<tr>";
           echo "<td>$linha[data]</td>";
           echo "<td>$linha[valortotal]</td>";
           echo "<td>$linha[formapagamento]</td>";
+          echo "<td>$linha[formapagamento]</td>";
           echo "</tr>";
         }
         echo "<tr>
-                  <td class='table-dark' colspan='10'>Total vendido no ano foi de R$$somatotal</td>
-                </tr>";
+                <td class='table-dark' colspan='10'>Total vendido no ano foi de R$$totalvendido, com lucro total de R$</td>
+              </tr>";
       }else{
         echo "<h3 style='color: red; text-align: center;'>Não existem dados nessa tabela.</h3>";
       }

@@ -21,5 +21,32 @@
       <p>Ao seu sistema de gerenciamento da livraria.</p>
       <hr class="linha">
     </div>
+
+    <div class="container">
+      <ul class="list-group list-group-flush">
+        <button type="button" class="list-group-item list-group-item-action active text-center">
+          <h4 class="mt-2">Avisos sobre o Sistema:</h4>
+        </button>
+        <li class="list-group-item">
+          Para efetuar cadastros é preciso preencher todos os dados sem exceção, 
+          caso digite algo errado é possivel alterar indo na listagem que escreveu algo errado clicar em alterar.
+        </li>
+
+        <li class="list-group-item">
+          Para cadastrar um novo tema, autor e editora é preciso selecionar "Cadastrar novo" dentre as opções do qual você deseja auterar, 
+          os campos necessários para preenchimento iram surgir, continue o resto do cadastro normalmente e quando finalizado o novo item será adicionado para escolha.
+        </li>
+
+        <li class="list-group-item">
+          Relatorios de dias, meses e anos que tiveram apenas uma ou nenhum venda irão retornar um alerta de "Não existem dados na tabela".
+        </li>
+
+        <li class="list-group-item">
+          A tela de vendas <strong>não vai exibir o desconto</strong>, isso é exibido logo acima da opção de escolha de método de pagamento na página de confirmação da verda.
+        </li>
+
+        <li class="list-group-item"></li>
+      </ul>
+    </div>
   </div>
 </body>

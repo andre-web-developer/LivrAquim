@@ -15,11 +15,8 @@ require_once ("classes/Venda.php");
 
             session_start();
             $_SESSION['livroscomprados'] = $livros;
-            $_SESSION['precoprevio'] = $_POST['precoprevio'];
-            if ($_SESSION['precoprevio']>200) {
-                $descontoPorcento = $_SESSION['precoprevio'] * 0.05;
-                $_SESSION['precoprevio'] = $_SESSION['precoprevio'] - $descontoPorcento;
-            }
+            $descontoPorcento = $_POST['precoprevio'] * 0.05;
+            $_SESSION['precoprevio'] = $_POST['precoprevio'] - $descontoPorcento;
         }
         header("Location:../view/confirmavenda.php");
     }

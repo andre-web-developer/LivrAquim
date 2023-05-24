@@ -43,7 +43,7 @@ class Banco extends PDO{
 	public function deletar($sql){
 		try{
 			//tenta executar a SQL e catch fica esperando pelo erro
-			$resultado=$this->conex->query($sql);
+			$this->conex->query($sql);
 			return true;
 		} catch (PDOException) {
 			return false;

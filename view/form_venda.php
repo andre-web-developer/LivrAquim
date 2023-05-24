@@ -24,7 +24,7 @@
         <form action="../controle/venda.php" method="POST">
             <?php
                 require("../controle/venda.php");
-                mostrarProdutos();
+                    mostrarProdutos();
                 ?>
 
             <div id="listarCentro">

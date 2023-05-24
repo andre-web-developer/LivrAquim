@@ -27,8 +27,13 @@ require_once ("classes/Venda.php");
     }
 
     if (isset($_POST['pagamento'])) {
+        //EM CASA $data = date("Y-m-d");
+        
+        //NO CURSO
+        $dia = date("d")-1;
+        $data = date("Y-m");
+        $data = $data."-".$dia;
         $id_formapagamento = $_POST['pagamento'];
-        $data = date("Y-m-d");
         session_start();
         $valortotal = $_SESSION['precoprevio'];
         

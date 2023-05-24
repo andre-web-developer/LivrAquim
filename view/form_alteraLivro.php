@@ -95,12 +95,12 @@
           <div class="form-group col-md-7">
               <label><h6>Tema:</h6></label>
               <select class="form-control" name="id_tema">
-              </select>
-          </div>
-        </div>
                 <?php
                   mostrarTemas();
                 ?>
+              </select>
+          </div>
+        </div>
             
         <div class="form-group row">
           <label class="col-sm-3 col-form-label"><h6>Preço de Custo</h6></label>

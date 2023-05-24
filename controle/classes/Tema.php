@@ -27,6 +27,18 @@
       }
     }
 
+    public function mostrarAlterar($id_tema){
+      $sql = "select*from tema";
+      $resultado = $this->banco->consultar($sql);
+      while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
+        if ($linha['id_tema']==$id_tema) {
+          echo "<option selected value=$linha[id_tema]>$linha[tema]</option>";
+        } else {
+          echo "<option value=$linha[id_tema]>$linha[tema]</option>";
+        }
+      }
+    }
+
     public function listarTemas(){
       $sql = "SELECT*FROM tema ORDER BY tema";
       $resultado = $this->banco->consultar($sql);

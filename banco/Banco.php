@@ -25,7 +25,6 @@ class Banco extends PDO{
 		$num_linhas=$resultado->rowCount();
 		if($num_linhas==1){
 			//perguntar como isso funciona e PQ
-			//Talvez mysqli seja melhor
 			return $resultado->fetch(PDO::FETCH_ASSOC);
 		}
 		elseif($num_linhas>1){

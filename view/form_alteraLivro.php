@@ -61,7 +61,7 @@
             <label><h6>Autor:</h6></label>
             <select class="form-control" name="id_autor">
               <?php
-                mostrarAutor();
+                mostrarAlteraAutor($livro['id_autor']);
               ?>
             </select>
           </div>
@@ -87,7 +87,7 @@
             <label><h6>Editora:</h6></label>
             <select class="form-control" name="id_editora">
               <?php
-                mostrarEditoras();
+                mostrarAlteraEditora($livro['id_editora']);
               ?>
             </select>
           </div>
@@ -96,7 +96,7 @@
               <label><h6>Tema:</h6></label>
               <select class="form-control" name="id_tema">
                 <?php
-                  mostrarTemas();
+                  mostrarAlteraTema($livro['id_tema']);
                 ?>
               </select>
           </div>

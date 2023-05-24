@@ -87,11 +87,7 @@ class Livro{
     }
     
     public function getLivro($id_livro){
-        $sql = "SELECT livro.*, editora.nome AS editora,tema.tema,autor.nome FROM livro,editora,tema,autor WHERE    
-                livro.id_editora = editora.id_editora AND
-                livro.id_autor = autor.id_autor AND
-                livro.id_tema = tema.id_tema AND
-                id_livro=$id_livro;";
+        $sql = "SELECT * FROM livro WHERE id_livro=$id_livro;";
         $resultado = $this->banco->consultar($sql);
         return $resultado;
     }

@@ -107,13 +107,28 @@
         $autor->mostrar();             
     }
     
+    function mostrarAlteraAutor($id_autor){
+        $autor = new Autor();
+        $autor->mostrarAlterar($id_autor);             
+    }
+    
     function mostrarTemas(){
         $tema = new Tema();
         $tema->mostrar();
     }
-
+    
+    function mostrarAlteraTema($id_tema){
+        $tema = new Tema();
+        $tema->mostrarAlterar($id_tema);             
+    }
+    
     function mostrarEditoras(){
         $editora = new Editora();
         $editora->mostrar();
+    }
+    
+    function mostrarAlteraEditora($id_editora){
+        $editora = new Editora();
+        $editora->mostrarAlterar($id_editora);             
     }
 ?>

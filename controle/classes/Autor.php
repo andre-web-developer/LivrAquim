@@ -26,6 +26,18 @@
         echo "<option value=$linha[id_autor]>$linha[nome]</option>";
       }
     }
+    
+    public function mostrarAlterar($id_autor){
+      $sql = "select*from autor";
+      $resultado = $this->banco->consultar($sql);
+      while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
+        if ($linha['id_autor']==$id_autor) {
+          echo "<option selected value=$linha[id_autor]>$linha[nome]</option>";
+        } else {
+          echo "<option value=$linha[id_autor]>$linha[nome]</option>";
+        }
+      }
+    }
 
     public function listarAutor(){
       $sql = "SELECT*FROM autor ORDER BY nome";

@@ -28,6 +28,18 @@
       }
     }
 
+    public function mostrarAlterar($id_editora){
+      $sql = "select*from editora";
+      $resultado = $this->banco->consultar($sql);
+      while($linha = $resultado->fetch(PDO::FETCH_ASSOC)){
+        if ($linha['id_editora']==$id_editora) {
+          echo "<option selected value=$linha[id_editora]>$linha[nome]</option>";
+        } else {
+          echo "<option value=$linha[id_editora]>$linha[nome]</option>";
+        }
+      }
+    }
+
     public function listarEditora(){
       $sql = "SELECT*FROM editora ORDER BY nome";
       $resultado = $this->banco->consultar($sql);

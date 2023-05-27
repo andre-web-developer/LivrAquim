@@ -6,7 +6,6 @@
         $cpf = $_POST["cpf"];
         $senha = $_POST["senha"];
         $nome = $_POST["nome"];
-
         
         $objeto = new Usuario();
         $objeto->login($cpf,$senha);
@@ -18,10 +17,13 @@
         session_destroy();
         header("Location:../index.php");   
     }
+
     function testa_login(){
         session_start();
         if(!isset($_SESSION['nome'])){
             header("Location:../index.php");
         }
     }
+
+    
 ?>

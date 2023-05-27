@@ -28,6 +28,18 @@
                     if(isset($_GET['falha'])&&($_GET['falha']==true)) {
                         echo "<p style='color: red;'>CPF ou senha incorretos, tente novamente.</p>";
                     }
+                    
+                    if(isset($_GET['recuperacao'])) {
+                        switch ($_GET['recuperacao']) {
+                            case 'true':
+                                echo "<p style='color: green;'>Senha Atualizada, pode efetuar o login com ela.</p>";
+                                break;
+                            
+                            case 'true':
+                                echo "<p style='color: red;'>Atualização da senha falhou, tente novamente ou entre em contato com o administrador do sistema.</p>";
+                                break;
+                        }
+                    }
                 ?>
                 <form class="form" action="controle/login.php" method="POST">
                     <label class="label-input">
@@ -41,6 +53,8 @@
                     </label>
 
                     <input class="btn" type="submit" value="Enviar">
+
+                    <a href="view/esquecer_senha.php" class="forget-password">Esqueceu a senha?</a>
                     
                 </form>
             </div>

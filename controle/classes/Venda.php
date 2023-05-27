@@ -23,37 +23,37 @@
                 
                 <div class='col-sm-8'>
                   <div class='row m-0 mb-3'>
-                    <label for='staticTitilo' class='col-form-label'><h6>Título:</h6></label>
+                    <label class='col-form-label'><h6>Título:</h6></label>
                     <div class='col-sm-9'>
-                      <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$linha[titulo]'>
+                      <p>$linha[titulo]</p>
                     </div>
                   </div>
 
                   <div class='row m-0 mb-3'>
-                    <label for='staticTitilo' class='col-form-label'><h6>Ano:</h6></label>
+                    <label class='col-form-label'><h6>Ano:</h6></label>
                     <div class='col-sm-9'>
-                      <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$linha[ano]'>
+                      <input type='text' readonly class='form-control-plaintext' value='$linha[ano]'>
                     </div>
                   </div>
                   
                   <div class='row m-0 mb-3'>
-                    <label for='staticTitilo' class='col-form-label'><h6>Autor:</h6></label>
+                    <label class='col-form-label'><h6>Autor:</h6></label>
                     <div class='col-sm-9'>
-                      <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$linha[nome]'>
+                      <input type='text' readonly class='form-control-plaintext' value='$linha[nome]'>
                     </div>
                   </div>
                   
                   <div class='row m-0 mb-3'>
-                    <label for='staticTitilo' class='col-form-label'><h6>Editora:</h6></label>
+                    <label class='col-form-label'><h6>Editora:</h6></label>
                     <div class='col-sm-9'>
-                      <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$linha[editora]'>
+                      <input type='text' readonly class='form-control-plaintext' value='$linha[editora]'>
                     </div>
                   </div>
 
                   <div class='row m-0 mb-3'>
-                    <label for='staticTitilo' class='col-form-label'><h6>Tema:</h6></label>
+                    <label class='col-form-label'><h6>Tema:</h6></label>
                     <div class='col-sm-9'>
-                      <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$linha[tema]'>
+                      <input type='text' readonly class='form-control-plaintext' value='$linha[tema]'>
                     </div>
                   </div>
               
@@ -109,51 +109,51 @@
           
                   <div class='col-sm-7'>
                     <div class='row m-0'>
-                      <label for='staticTitilo' class='col-form-label'><h6>Título:</h6></label>
+                      <label class='col-form-label'><h6>Título:</h6></label>
                       <div class='col-sm-10 mb-4'>
-                        <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$resultado[titulo]'>
+                        <p>$resultado[titulo]</p>
                       </div>
                     </div>
 
                     <div class='row m-0'>
-                      <label for='staticTitilo' class='col-form-label'><h6>Ano:</h6></label>
+                      <label class='col-form-label'><h6>Ano:</h6></label>
                       <div class='col-sm-10 mb-4'>
-                        <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$resultado[ano]'>
+                        <input type='text' readonly class='form-control-plaintext' value='$resultado[ano]'>
                       </div>
                     </div>
                     
                     <div class='row m-0'>
-                      <label for='staticTitilo' class='col-form-label'><h6>Autor:</h6></label>
+                      <label class='col-form-label'><h6>Autor:</h6></label>
                       <div class='col-sm-10 mb-4'>
-                        <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$resultado[nome]'>
+                        <input type='text' readonly class='form-control-plaintext' value='$resultado[nome]'>
                       </div>
                     </div>
 
                     <div class='row m-0'>
-                      <label for='staticTitilo' class='col-form-label'><h6>Editora:</h6></label>
+                      <label class='col-form-label'><h6>Editora:</h6></label>
                       <div class='col-sm-10 mb-4'>
-                        <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$resultado[editora]'>
+                        <input type='text' readonly class='form-control-plaintext' value='$resultado[editora]'>
                       </div>
                     </div>
 
                     <div class='row m-0'>
-                      <label for='staticTitilo' class='col-form-label'><h6>Tema:</h6></label>
+                      <label class='col-form-label'><h6>Tema:</h6></label>
                       <div class='col-sm-10 mb-4'>
-                        <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$resultado[tema]'>
+                        <input type='text' readonly class='form-control-plaintext' value='$resultado[tema]'>
                       </div>
                     </div>
 
                     <div class='row m-0'>
-                      <label for='staticTitilo' class='col-form-label'><h6>Quantidade vendida:</h6></label>
+                      <label class='col-form-label'><h6>Quantidade vendida:</h6></label>
                       <div class='col-sm-4 mb-4'>
-                        <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='$quantidade'>
+                        <input type='text' readonly class='form-control-plaintext' value='$quantidade'>
                       </div>
                     </div>
 
                     <div class='row m-0'>
-                      <label for='staticTitilo' class='col-form-label'><h6>Subtotal do item:</h6></label>
+                      <label class='col-form-label'><h6>Subtotal do item:</h6></label>
                       <div class='col-sm-4'>
-                        <input type='text' readonly class='form-control-plaintext' id='staticTitilo' value='R$$subtotal'>
+                        <input type='text' readonly class='form-control-plaintext' value='R$$subtotal'>
                       </div>
                     </div>
                   </div>

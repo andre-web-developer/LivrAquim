@@ -8,6 +8,7 @@ CREATE TABLE usuario(
 id_usuario INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
 cpf VARCHAR(255),
 nome VARCHAR(255),
+email VARCHAR(255),
 senha VARCHAR(255));
 
 CREATE TABLE editora(
@@ -61,8 +62,8 @@ valorunitario DECIMAL(10,2),
 FOREIGN KEY(id_venda) REFERENCES venda(id_venda),
 FOREIGN KEY(id_livro) REFERENCES livro(id_livro));
 
-INSERT INTO usuario(cpf,nome,senha) VALUES("11111111111","Administrador","123");
-INSERT INTO usuario(cpf,nome,senha) VALUES ("22222222222","Joaquim","123");
+INSERT INTO usuario(cpf,nome,senha,email) VALUES("11111111111","Administrador","123","andrerodrigues2003@gmail.com");
+INSERT INTO usuario(cpf,nome,senha,email) VALUES ("22222222222","Joaquim","123","andrerodrigues2003@gmail.com");
 
 INSERT INTO editora(nome,cnpj,telefone) VALUES("Novatec","5263969","(42)3231-9652");
 INSERT INTO editora(nome,cnpj,telefone) VALUES("Senac","41412525","(42)3231-8888");
@@ -81,7 +82,18 @@ INSERT INTO autor(nome) VALUES ("Roger Pressman");
 INSERT INTO autor(nome) VALUES ("Ian Somerville");
 INSERT INTO autor(nome) VALUES ("Mário Sérgio Cortella");
 INSERT INTO autor(nome) VALUES ("Maurício de Souza");
+INSERT INTO autor(nome) VALUES ("Maurício Samy Silva");
+INSERT INTO autor(nome) VALUES ("Loiane Gruner");
 
 INSERT INTO formapagamento(formapagamento,descontoporcento) VALUES ("Dinheiro", 5);
 INSERT INTO formapagamento(formapagamento,descontoporcento) VALUES ("PIX", 5);
 INSERT INTO formapagamento(formapagamento,descontoporcento) VALUES ("Cartão", 5);
+
+INSERT INTO livro(isbn,titulo,ano,id_autor,id_tema,id_editora,precocompra,precovenda,quantidade,foto) VALUES ('8575222481','JavaScript - Guia do Programador: Guia Completo das Funcionalidades de Linguagem JavaScript','2010','6','1','1','94.41','124.99','50','../img/capas/capa-ampliada-9788575222485.jpg');
+INSERT INTO livro(isbn,titulo,ano,id_autor,id_tema,id_editora,precocompra,precovenda,quantidade,foto) VALUES ('8575226932','Estruturas de Dados e Algoritmos com JavaScript: Escreva um Código JavaScript Complexo e Eficaz Usando a Mais Recente ECMAScript','2019','7','1','1','92.70','119..90','50','../img/capas/js-book.jpg');
+
+INSERT INTO venda(id_formapagamento,data,valortotal) VALUES ('1','2023-05-25','118.74');
+INSERT INTO venda(id_formapagamento,data,valortotal) VALUES ('3','2023-05-25','356.22');
+
+INSERT INTO venda_livro(id_livro,id_venda,quantidade_venda,valorunitario) VALUES ('1','1','1','124.99');
+INSERT INTO venda_livro(id_livro,id_venda,quantidade_venda,valorunitario) VALUES ('1','2','3','124.99');

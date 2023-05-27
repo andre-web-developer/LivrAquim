@@ -14,7 +14,7 @@
         }
 
         public function login($cpf,$senha){
-            $sql = "select*from usuario where cpf='$cpf' and senha='$senha'";
+            $sql = "SELECT * FROM usuario WHERE cpf='$cpf' AND senha='$senha'";
             $resultado = $this->banco->consultar($sql);
             if($resultado){
                 session_start();
@@ -23,6 +23,17 @@
             }
             else{
                 header("Location:../index.php?falha=true");
+            }
+        }
+        
+        public function esquecer($cpf,$senha){
+            $sql = "UPDATE usuario SET senha='$senha' where cpf='$cpf'";
+            $resultado = $this->banco->consultar($sql);
+            if($resultado){ 
+                header("Location:../index.php?recuperacao=true");
+            }
+            else{
+                header("Location:../index.php?recuperacao=false");
             }
         }
     }

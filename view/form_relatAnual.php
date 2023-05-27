@@ -53,7 +53,7 @@ require("cabecalho.php");
               <th scope="col">Data</th>
               <th scope="col">Valor Total</th>
               <th scope="col">Forma de pagamento</th>
-              <th scope="col">lucro</th>
+              <th scope="col">Lucro</th>
             </tr>
           </thead>
           <tbody>

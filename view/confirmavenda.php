@@ -34,7 +34,7 @@
                 <h2>Metodo de pagamento:</h2>
                 <p>Selecione o metodo de pagamento desejado</p>
                 <?php
-                    echo "<h5>Preço total da compra com desconto de 5% calculado:</h5> <h4>R$$_SESSION[precoprevio]</h4>";
+                    echo "<h5>Preço total da compra com desconto de 5% calculado:</h5> <h4>R$".round($_SESSION['precoprevio'], 2)."</h4>";
 
                     if ($_SESSION['precoprevio']>200) {
                         echo   "<div class='text-center mt-4 mb-4'>
